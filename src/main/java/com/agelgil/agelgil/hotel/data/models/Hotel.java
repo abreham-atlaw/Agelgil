@@ -7,10 +7,12 @@ import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.tools.DocumentationTool.Location;
+import javax.persistence.UniqueConstraint;
 
+import com.agelgil.agelgil.lib.data.models.auth.User;
 import com.agelgil.agelgil.lib.data.models.auth.UserType;
 
 import lombok.Data;
@@ -18,9 +20,19 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "hotel_hotel")
+@Table(
+	name = "hotel_hotel",
+	uniqueConstraints = @UniqueConstraint(columnNames = {"user_username"})
+	)
 public class Hotel extends UserType {
 	
+
+	@Id
+	private Long id;
+
+	@ManyToOne
+	private User user;
+
 	private String name;
 
 	@Embedded

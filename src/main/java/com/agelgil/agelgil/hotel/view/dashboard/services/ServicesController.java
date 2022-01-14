@@ -3,6 +3,7 @@ package com.agelgil.agelgil.hotel.view.dashboard.services;
 import com.agelgil.agelgil.hotel.data.models.Service;
 import com.agelgil.agelgil.hotel.data.models.Service.ServiceType;
 import com.agelgil.agelgil.hotel.data.repositories.ServiceRepository;
+import com.agelgil.agelgil.hotel.data.repositories.ServiceTypeRepository;
 import com.agelgil.agelgil.hotel.view.dashboard.DashboardController;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,9 @@ public class ServicesController extends DashboardController{
 	
 	@Autowired
 	private ServiceRepository serviceRepository;
+
+	@Autowired
+	private ServiceTypeRepository serviceTypeRepository;
 
 
 	@GetMapping("/hotel/dashboard/services")
@@ -39,7 +43,7 @@ public class ServicesController extends DashboardController{
 
 	@ModelAttribute
 	public Iterable<ServiceType> fetchServiceTypes(){
-		
+		return serviceTypeRepository.findAll();
 	}
 
 }

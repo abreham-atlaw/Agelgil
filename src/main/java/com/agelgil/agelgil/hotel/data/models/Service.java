@@ -1,6 +1,7 @@
 package com.agelgil.agelgil.hotel.data.models;
 
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
@@ -10,10 +11,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-import groovy.util.logging.Log;
 import lombok.Data;
 
 @Data
+@Entity
 @Table(name = "hotel_service")
 public class Service {
 

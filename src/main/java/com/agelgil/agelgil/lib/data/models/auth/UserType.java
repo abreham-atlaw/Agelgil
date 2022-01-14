@@ -7,10 +7,9 @@ import lombok.Data;
 
 
 @Data
-public class UserType {
+public abstract class UserType {
 	
-	@Id
-	@OneToOne(mappedBy = "username")
-	protected User user;
+	public abstract User getUser();
 
+	
 }

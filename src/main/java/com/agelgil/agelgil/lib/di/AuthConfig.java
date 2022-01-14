@@ -24,7 +24,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
-public class AuthConfig extends WebSecurityConfigurerAdapter{
+public class AuthConfig{
 
 	@Bean
 	public UserDetailsService userDetailsService(UserRepository userRepository){
@@ -55,14 +55,14 @@ public class AuthConfig extends WebSecurityConfigurerAdapter{
 		HttpSecurity httpSecurity,
 		@Qualifier("clientOnlyPatters") List<String> clientOnlyPattens,
 		@Qualifier("hotelOnlyPatterns") List<String> hotelOnlyPatterns,
-		@Qualifier("adminOnlyPatterns") List<String> adminOnlyPatterns, 
+		@Qualifier("adminOnlyPatterns") List<String> adminOnlyPatterns
 	) throws Exception{
 
 		return httpSecurity
 							.authorizeRequests()
-							.antMatchers(clientOnlyPattens.toArray(new String[0])).hasRole(User.Role.ROLE_CLIENT.name())
-							.antMatchers(hotelOnlyPatterns.toArray(new String[0])).hasRole(User.Role.ROLE_HOTEL.name())
-							.antMatchers(adminOnlyPatterns.toArray(new String[0])).hasRole(User.Role.ROLE_HOTEL.name())
+							.antMatchers(clientOnlyPattens.toArray(new String[0])).hasRole(User.Role.CLIENT.name())
+							.antMatchers(hotelOnlyPatterns.toArray(new String[0])).hasRole(User.Role.HOTEL.name())
+							.antMatchers(adminOnlyPatterns.toArray(new String[0])).hasRole(User.Role.ADMIN.name())
 							.antMatchers("/", "/**").permitAll()
 							.and()
 							.build();

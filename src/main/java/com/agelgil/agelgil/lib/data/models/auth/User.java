@@ -7,8 +7,13 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,7 +25,7 @@ import lombok.Data;
 @Entity
 @Table(name = "lib_auth_user")
 public class User implements UserDetails{
-	
+
 	@Id
 	private String username;
 
@@ -41,10 +46,25 @@ public class User implements UserDetails{
 		);
 	}
 
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true; // TODO
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return true; // TODO
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return true; // TODO: 
+	}
+
 	public static enum Role{
-		ROLE_CLIENT,
-		ROLE_HOTEL,
-		ROLE_ADMIN
+		CLIENT,
+		HOTEL,
+		ADMIN
 	}
 	
 }
