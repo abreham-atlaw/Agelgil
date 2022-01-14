@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+		<title layout:fragment="title">Agelgil Client</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 	
+		<link rel="stylesheet" th:href="@{/static/client/libs/bootstrap/bootstrap.min.css}">
+		<link rel="stylesheet" th:href="@{/static/lib/fontawesome/css/all.css}">
+		<link rel="stylesheet" th:href="@{/static/lib/css/local.css}">
+	</head>
+	<body class="bg-light">
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light py-md-5 px-xl-5">
+				<div class="container-fluid">
+					<a class="navbar-brand col-lg-2 col-md-4 col-6 p-0" href="/" >
+						<img th:src="@{/static/client/core/images/logo-horizontal.png}" class="col-10 p-0">
+					</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							<li class="nav-item mr-4" th:each="tab: ${headerTabs}">
+								<a class="nav-link" th:href="${tab.url}" th:text="${tab.text}"></a>
+							</li>
+						</ul>
+						<div class="ml-lg-auto d-flex flex-column flex-lg-row mt-5 mt-lg-0">
+						
+							<div class="d-flex">
+								<a class="rounded-circle bg-primary text-light d-flex local-w-3 local-h-3 mx-2 shadow-sm">
+									<i class="fas fa-search m-auto"></i>
+								</a>
+								<div class="bg-dark" style="width: 2px;"></div>
+								<a class="rounded-circle bg-white text-primary d-flex local-w-3 local-h-3 mx-2 shadow-sm">
+									<i class="fas fa-shopping-cart m-auto"></i>
+								</a>
+		
+							</div>
+							
+							<div class="d-lg-flex d-block">
+								<div class="d-flex flex-column flex-lg-row mt-5 my-lg-auto" th:if="true">
+									<a href="#" class="btn btn-light mx-3">LOGIN</a>
+									<a href="#" class="btn btn-primary mx-3">SIGNUP</a>
+								</div>
+								<div class="" th:unless="true">
+									TODO
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+		
+		<main layout:fragment="main"></main>
+		
+		<footer>
+			<div class="d-flex flex-lg-row flex-column bg-primary text-light p-5">
+				<ul class="nav nav-dark flex-column my-lg-auto my-5">
+					<li class="nav-item" th:each="tab: ${footerTabs}">
+						<a class="nav-link text-light text-lg-left text-center" th:href="${tab.url}" th:text="${tab.text}"></a>
+					</li>
+				</ul>
+				<div class="col-lg-3 col-md-6 col-sm-9 col-11 mx-auto my-5 my-lg-auto">
+					<div class="col-7 p-3 bg-white local-br-2 m-auto">
+						<img th:src="@{/static/client/core/images/logo-vertical.png}" class="w-100">
+					</div>
+					<div class="text-center mt-3">
+						Copyright &copy; 2021 | Agelgil 
+					</div>
+				</div>
+				<div class="my-lg-auto my-5">
+					<h4 class="text-center">Contact</h4>
+					<div class="my-lg-5 my-4">
+						<div class="d-flex" th:each="info: ${contactInformations}">
+							<span class="" th:text="${info.name}"></span>:
+							<a th:href="${info.url}" th:text="${info.value}" class="link col-8 text-right text-light ml-auto p-0"></a>
+						</div>
+					</div>
+					<a href="/hotel" class="btn btn-light w-100">AGELGIL FOR HOTELS</a>
+				</div>
+			</div>
+		</footer>
+		<script th:src="@{/static/lib/js/bootstrap.bundle.min.js}"></script>
+	</body>
+
+
+</html>
