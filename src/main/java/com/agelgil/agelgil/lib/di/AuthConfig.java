@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.agelgil.agelgil.lib.data.models.auth.User;
 import com.agelgil.agelgil.lib.data.repositories.auth.UserRepository;
+import com.agelgil.agelgil.lib.extra.auth.UserManager;
 import com.agelgil.agelgil.lib.view.auth.handlers.AgelgilAuthenticationSuccessHandler;
 
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -97,6 +98,10 @@ public class AuthConfig{
 		return Arrays.asList();
 	}
 	
+	@Bean
+	public UserManager userManager(UserRepository repository, PasswordEncoder encoder){
+		return new UserManager(repository, encoder);
+	}
 
 
 }

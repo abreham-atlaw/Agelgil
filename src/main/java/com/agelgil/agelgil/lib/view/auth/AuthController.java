@@ -1,5 +1,7 @@
 package com.agelgil.agelgil.lib.view.auth;
 
+import com.agelgil.agelgil.client.view.ClientController;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
-public class AuthController {
+public class AuthController extends ClientController { //TODO: FIND A WAY TO MAKE IT WORK BY JUST EXTENDING AgelgilContoller
 
 	
 	@GetMapping("/login")
@@ -18,12 +20,12 @@ public class AuthController {
 			modelMap.addAttribute("loginError", true);
 
 
-		return "/login.html";
+		return "lib/auth/login.html";
 	}
 
 	@PostMapping("/logout")
 	public String logout(String redirectUrl){
-		return "";
+		return "redirect";
 	}
 
 

@@ -65,5 +65,6 @@ public class User implements UserDetails{
 		HOTEL,
 		ADMIN
 	}
-	
+
+
 }

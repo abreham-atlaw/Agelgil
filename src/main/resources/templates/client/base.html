@@ -61,36 +61,7 @@
 															</div>
 														</div>
 														<div class="col-lg-8 col-12 d-flex local-py-7">
-															<form class="m-auto w-75" method="post" th:action="@{/login}">
-																<h2 class="font-weight-bold text-center">Sign in to Agelgil</h2>
-
-																<input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
-
-																<div class="mt-5">
-																	<label for="email" class="form-label mb-1">E-Mail</label>
-																	<div class="input-group">
-																		<span class="input-group-text bg-light border-right-0"><i class="fas fa-user-alt text-secondary"></i></span>
-																		<input type="email" class="form-control border-left-0 bg-light" name="username" id="username" placeholder="E-Mail">
-																	</div>
-																</div>
-
-																<div class="mt-3">
-																	<label for="password" class="form-label mb-1">Password</label>
-																	<div class="input-group">
-																		<span class="input-group-text bg-light border-right-0"><i class="fas fa-lock text-secondary"></i></span>
-																		<input type="password" class="form-control border-left-0 bg-light" name="password" id="password" placeholder="Password">
-																	</div>
-																	<div class="d-flex">
-																		<a th:href="@{/auth/forgot-password}" class="link text-primary ml-auto">Forgot Password?</a>
-																	</div>
-																</div>
-																
-																<div class="local-mt-6 d-flex">
-																	<input type="submit" value="SIGN IN" class="mx-auto rounded-pill btn btn-primary py-2 px-5">
-																</div>
-																
-															</form>
-	
+															<div class="w-75 m-auto" layout:insert="~{lib/auth/components/login_form}"></div>
 														</div>
 													</div>
 												</div>
@@ -104,54 +75,20 @@
 												<div class="modal-body p-0">
 													<div class="row">
 														<div class="col-lg-8 col-12 d-flex local-py-7">
-															<form class="m-auto w-75" method="post" th:action="@{/login}">
-																<h2 class="font-weight-bold text-center">Sign Up to Agelgil</h2>
 
-																<input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
+															<div class="w-75 m-auto" layout:insert="~{client/auth/components/signup_form}">
 
-																<div class="mt-5">
-																	<label for="full-name" class="form-label mb-1">Full Name</label>
-																	<div class="input-group">
-																		<span class="input-group-text bg-light border-right-0"><i class="fas fa-user-alt text-secondary"></i></span>
-																		<input type="email" class="form-control border-left-0 bg-light" name="fullName" id="fullName" placeholder="Full Name">
-																	</div>
-																</div>
-
-																<div class="mt-5">
-																	<label for="email" class="form-label mb-1">E-Mail</label>
-																	<div class="input-group">
-																		<span class="input-group-text bg-light border-right-0"><i class="fas fa-user-alt text-secondary"></i></span>
-																		<input type="email" class="form-control border-left-0 bg-light" name="username" id="username" placeholder="E-Mail">
-																	</div>
-																</div>
-
-																<div class="mt-3">
-																	<label for="password" class="form-label mb-1">Password</label>
-																	<div class="input-group">
-																		<span class="input-group-text bg-light border-right-0"><i class="fas fa-lock text-secondary"></i></span>
-																		<input type="password" class="form-control border-left-0 bg-light" name="password" id="password" placeholder="Password">
-																	</div>
-																	<div class="d-flex">
-																		<a th:href="@{/auth/forgot-password}" class="link text-primary ml-auto">Forgot Password?</a>
-																	</div>
-																</div>
-																
-																<div class="local-mt-6 d-flex">
-																	<input type="submit" value="SIGN IN" class="mx-auto rounded-pill btn btn-primary py-2 px-5">
-																</div>
-																
-															</form>
-	
+															</div>
 														</div>
 														<div class="col-4 bg-primary text-light d-lg-flex d-none local-py-7">
 															<div class="m-auto col-10">
 																<div>
-																	<h2 class="font-weight-bold">Welcome Back!</h2>
+																	<h2 class="font-weight-bold">Hello, Friend!</h2>
 																	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas error sint modi nostrum porro </p>
 																</div>
 																<div class="local-mt-6">
-																	<p>Don't have an account, yet?</p>
-																	<button type="button" class="btn btn-outline-light rounded-pill px-5">SIGNUP</button>
+																	<p>Already have an account?</p>
+																	<button type="button" class="btn btn-outline-light rounded-pill px-5">SIGN IN</button>
 																</div>
 															</div>
 														</div>
