@@ -1,8 +1,6 @@
 package com.agelgil.agelgil.lib.view;
 
-import java.util.Arrays;
 
-import com.agelgil.agelgil.lib.data.models.webcontent.ContactInformation;
 import com.agelgil.agelgil.lib.data.repositories.webcontent.ContactInformationRespository;
 
 import org.springframework.beans.factory.annotation.Autowired;

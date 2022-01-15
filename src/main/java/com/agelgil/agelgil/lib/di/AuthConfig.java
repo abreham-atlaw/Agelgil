@@ -5,20 +5,20 @@ import java.util.List;
 
 import com.agelgil.agelgil.lib.data.models.auth.User;
 import com.agelgil.agelgil.lib.data.repositories.auth.UserRepository;
+import com.agelgil.agelgil.lib.view.auth.handlers.AgelgilAuthenticationSuccessHandler;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer.ExpressionInterceptUrlRegistry;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 
 
@@ -65,8 +65,17 @@ public class AuthConfig{
 							.antMatchers(adminOnlyPatterns.toArray(new String[0])).hasRole(User.Role.ADMIN.name())
 							.antMatchers("/", "/**").permitAll()
 							.and()
+							.formLogin()
+							.loginPage("/login")
+							.successHandler(authenticationSuccessHandler())
+							.and()
 							.build();
 
+	}
+
+	@Bean
+	public AuthenticationSuccessHandler authenticationSuccessHandler(){
+		return new AgelgilAuthenticationSuccessHandler();
 	}
 
 	@Bean 
@@ -76,14 +85,18 @@ public class AuthConfig{
 		);
 	}
 
-	@Bean List<String> adminOnlyPatterns(){
+	@Bean 
+	public List<String> adminOnlyPatterns(){
 		return Arrays.asList(
 			"/admin/dashboard"
 		);
 	}
 
-	@Bean List<String> clientOnlyPatterns(){
+	@Bean 
+	public List<String> clientOnlyPatterns(){
 		return Arrays.asList();
 	}
 	
+
+
 }

@@ -96,6 +96,43 @@ ATTRIBUTES = [
 		Attribute("mx-9", ["margin-left: 32em;", "margin-right: 32em;"]),
 		Attribute("mx-10", ["margin-left: 64em;", "margin-right: 64em;"]),
 
+		Attribute("pt-6", ["padding-top: 4em;"]),
+		Attribute("pt-7", ["padding-top: 8em;"]),
+		Attribute("pt-8", ["padding-top: 16em;"]),
+		Attribute("pt-9", ["padding-top: 32em;"]),
+		Attribute("pt-10", ["padding-top: 64em;"]),
+
+		Attribute("pb-6", ["padding-bottom: 4em;"]),
+		Attribute("pb-7", ["padding-bottom: 8em;"]),
+		Attribute("pb-8", ["padding-bottom: 16em;"]),
+		Attribute("pb-9", ["padding-bottom: 32em;"]),
+		Attribute("pb-10", ["padding-bottom: 64em;"]),
+
+		Attribute("pr-6", ["padding-right: 4em;"]),
+		Attribute("pr-7", ["padding-right: 8em;"]),
+		Attribute("pr-8", ["padding-right: 16em;"]),
+		Attribute("pr-9", ["padding-right: 32em;"]),
+		Attribute("pr-10", ["padding-right: 64em;"]),
+
+		Attribute("pl-6", ["padding-left: 4em;"]),
+		Attribute("pl-7", ["padding-left: 8em;"]),
+		Attribute("pl-8", ["padding-left: 16em;"]),
+		Attribute("pl-9", ["padding-left: 32em;"]),
+		Attribute("pl-10", ["padding-left: 64em;"]),
+
+
+		Attribute("py-6", ["padding-top: 4em;", "padding-bottom: 4em;"]),
+		Attribute("py-7", ["padding-top: 8em;", "padding-bottom: 8em;"]),
+		Attribute("py-8", ["padding-top: 16em;", "padding-bottom: 16em;"]),
+		Attribute("py-9", ["padding-top: 32em;", "padding-bottom: 32em;"]),
+		Attribute("py-10", ["padding-top: 64em;", "padding-bottom: 64em;"]),
+
+		Attribute("px-6", ["padding-left: 4em;", "padding-right: 4em;"]),
+		Attribute("px-7", ["padding-left: 8em;", "padding-right: 8em;"]),
+		Attribute("px-8", ["padding-left: 16em;", "padding-right: 16em;"]),
+		Attribute("px-9", ["padding-left: 32em;", "padding-right: 32em;"]),
+		Attribute("px-10", ["padding-left: 64em;", "padding-right: 64em;"]),
+
         ]
 
 if __name__ == "__main__":

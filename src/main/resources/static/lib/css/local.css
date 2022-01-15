@@ -188,6 +188,136 @@
 	margin-right: 64em;
 }
 
+.local-pt-6 {
+	padding-top: 4em;
+}
+
+.local-pt-7 {
+	padding-top: 8em;
+}
+
+.local-pt-8 {
+	padding-top: 16em;
+}
+
+.local-pt-9 {
+	padding-top: 32em;
+}
+
+.local-pt-10 {
+	padding-top: 64em;
+}
+
+.local-pb-6 {
+	padding-bottom: 4em;
+}
+
+.local-pb-7 {
+	padding-bottom: 8em;
+}
+
+.local-pb-8 {
+	padding-bottom: 16em;
+}
+
+.local-pb-9 {
+	padding-bottom: 32em;
+}
+
+.local-pb-10 {
+	padding-bottom: 64em;
+}
+
+.local-pr-6 {
+	padding-right: 4em;
+}
+
+.local-pr-7 {
+	padding-right: 8em;
+}
+
+.local-pr-8 {
+	padding-right: 16em;
+}
+
+.local-pr-9 {
+	padding-right: 32em;
+}
+
+.local-pr-10 {
+	padding-right: 64em;
+}
+
+.local-pl-6 {
+	padding-left: 4em;
+}
+
+.local-pl-7 {
+	padding-left: 8em;
+}
+
+.local-pl-8 {
+	padding-left: 16em;
+}
+
+.local-pl-9 {
+	padding-left: 32em;
+}
+
+.local-pl-10 {
+	padding-left: 64em;
+}
+
+.local-py-6 {
+	padding-top: 4em;
+	padding-bottom: 4em;
+}
+
+.local-py-7 {
+	padding-top: 8em;
+	padding-bottom: 8em;
+}
+
+.local-py-8 {
+	padding-top: 16em;
+	padding-bottom: 16em;
+}
+
+.local-py-9 {
+	padding-top: 32em;
+	padding-bottom: 32em;
+}
+
+.local-py-10 {
+	padding-top: 64em;
+	padding-bottom: 64em;
+}
+
+.local-px-6 {
+	padding-left: 4em;
+	padding-right: 4em;
+}
+
+.local-px-7 {
+	padding-left: 8em;
+	padding-right: 8em;
+}
+
+.local-px-8 {
+	padding-left: 16em;
+	padding-right: 16em;
+}
+
+.local-px-9 {
+	padding-left: 32em;
+	padding-right: 32em;
+}
+
+.local-px-10 {
+	padding-left: 64em;
+	padding-right: 64em;
+}
+
 
 @media(max-width: 768px){
 
@@ -379,6 +509,136 @@
 .local-mx-sm-10 {
 	margin-left: 64em;
 	margin-right: 64em;
+}
+
+.local-pt-sm-6 {
+	padding-top: 4em;
+}
+
+.local-pt-sm-7 {
+	padding-top: 8em;
+}
+
+.local-pt-sm-8 {
+	padding-top: 16em;
+}
+
+.local-pt-sm-9 {
+	padding-top: 32em;
+}
+
+.local-pt-sm-10 {
+	padding-top: 64em;
+}
+
+.local-pb-sm-6 {
+	padding-bottom: 4em;
+}
+
+.local-pb-sm-7 {
+	padding-bottom: 8em;
+}
+
+.local-pb-sm-8 {
+	padding-bottom: 16em;
+}
+
+.local-pb-sm-9 {
+	padding-bottom: 32em;
+}
+
+.local-pb-sm-10 {
+	padding-bottom: 64em;
+}
+
+.local-pr-sm-6 {
+	padding-right: 4em;
+}
+
+.local-pr-sm-7 {
+	padding-right: 8em;
+}
+
+.local-pr-sm-8 {
+	padding-right: 16em;
+}
+
+.local-pr-sm-9 {
+	padding-right: 32em;
+}
+
+.local-pr-sm-10 {
+	padding-right: 64em;
+}
+
+.local-pl-sm-6 {
+	padding-left: 4em;
+}
+
+.local-pl-sm-7 {
+	padding-left: 8em;
+}
+
+.local-pl-sm-8 {
+	padding-left: 16em;
+}
+
+.local-pl-sm-9 {
+	padding-left: 32em;
+}
+
+.local-pl-sm-10 {
+	padding-left: 64em;
+}
+
+.local-py-sm-6 {
+	padding-top: 4em;
+	padding-bottom: 4em;
+}
+
+.local-py-sm-7 {
+	padding-top: 8em;
+	padding-bottom: 8em;
+}
+
+.local-py-sm-8 {
+	padding-top: 16em;
+	padding-bottom: 16em;
+}
+
+.local-py-sm-9 {
+	padding-top: 32em;
+	padding-bottom: 32em;
+}
+
+.local-py-sm-10 {
+	padding-top: 64em;
+	padding-bottom: 64em;
+}
+
+.local-px-sm-6 {
+	padding-left: 4em;
+	padding-right: 4em;
+}
+
+.local-px-sm-7 {
+	padding-left: 8em;
+	padding-right: 8em;
+}
+
+.local-px-sm-8 {
+	padding-left: 16em;
+	padding-right: 16em;
+}
+
+.local-px-sm-9 {
+	padding-left: 32em;
+	padding-right: 32em;
+}
+
+.local-px-sm-10 {
+	padding-left: 64em;
+	padding-right: 64em;
 }
 
 }
@@ -576,6 +836,136 @@
 	margin-right: 64em;
 }
 
+.local-pt-md-6 {
+	padding-top: 4em;
+}
+
+.local-pt-md-7 {
+	padding-top: 8em;
+}
+
+.local-pt-md-8 {
+	padding-top: 16em;
+}
+
+.local-pt-md-9 {
+	padding-top: 32em;
+}
+
+.local-pt-md-10 {
+	padding-top: 64em;
+}
+
+.local-pb-md-6 {
+	padding-bottom: 4em;
+}
+
+.local-pb-md-7 {
+	padding-bottom: 8em;
+}
+
+.local-pb-md-8 {
+	padding-bottom: 16em;
+}
+
+.local-pb-md-9 {
+	padding-bottom: 32em;
+}
+
+.local-pb-md-10 {
+	padding-bottom: 64em;
+}
+
+.local-pr-md-6 {
+	padding-right: 4em;
+}
+
+.local-pr-md-7 {
+	padding-right: 8em;
+}
+
+.local-pr-md-8 {
+	padding-right: 16em;
+}
+
+.local-pr-md-9 {
+	padding-right: 32em;
+}
+
+.local-pr-md-10 {
+	padding-right: 64em;
+}
+
+.local-pl-md-6 {
+	padding-left: 4em;
+}
+
+.local-pl-md-7 {
+	padding-left: 8em;
+}
+
+.local-pl-md-8 {
+	padding-left: 16em;
+}
+
+.local-pl-md-9 {
+	padding-left: 32em;
+}
+
+.local-pl-md-10 {
+	padding-left: 64em;
+}
+
+.local-py-md-6 {
+	padding-top: 4em;
+	padding-bottom: 4em;
+}
+
+.local-py-md-7 {
+	padding-top: 8em;
+	padding-bottom: 8em;
+}
+
+.local-py-md-8 {
+	padding-top: 16em;
+	padding-bottom: 16em;
+}
+
+.local-py-md-9 {
+	padding-top: 32em;
+	padding-bottom: 32em;
+}
+
+.local-py-md-10 {
+	padding-top: 64em;
+	padding-bottom: 64em;
+}
+
+.local-px-md-6 {
+	padding-left: 4em;
+	padding-right: 4em;
+}
+
+.local-px-md-7 {
+	padding-left: 8em;
+	padding-right: 8em;
+}
+
+.local-px-md-8 {
+	padding-left: 16em;
+	padding-right: 16em;
+}
+
+.local-px-md-9 {
+	padding-left: 32em;
+	padding-right: 32em;
+}
+
+.local-px-md-10 {
+	padding-left: 64em;
+	padding-right: 64em;
+}
+
 }
 
 
@@ -769,6 +1159,136 @@
 .local-mx-lg-10 {
 	margin-left: 64em;
 	margin-right: 64em;
+}
+
+.local-pt-lg-6 {
+	padding-top: 4em;
+}
+
+.local-pt-lg-7 {
+	padding-top: 8em;
+}
+
+.local-pt-lg-8 {
+	padding-top: 16em;
+}
+
+.local-pt-lg-9 {
+	padding-top: 32em;
+}
+
+.local-pt-lg-10 {
+	padding-top: 64em;
+}
+
+.local-pb-lg-6 {
+	padding-bottom: 4em;
+}
+
+.local-pb-lg-7 {
+	padding-bottom: 8em;
+}
+
+.local-pb-lg-8 {
+	padding-bottom: 16em;
+}
+
+.local-pb-lg-9 {
+	padding-bottom: 32em;
+}
+
+.local-pb-lg-10 {
+	padding-bottom: 64em;
+}
+
+.local-pr-lg-6 {
+	padding-right: 4em;
+}
+
+.local-pr-lg-7 {
+	padding-right: 8em;
+}
+
+.local-pr-lg-8 {
+	padding-right: 16em;
+}
+
+.local-pr-lg-9 {
+	padding-right: 32em;
+}
+
+.local-pr-lg-10 {
+	padding-right: 64em;
+}
+
+.local-pl-lg-6 {
+	padding-left: 4em;
+}
+
+.local-pl-lg-7 {
+	padding-left: 8em;
+}
+
+.local-pl-lg-8 {
+	padding-left: 16em;
+}
+
+.local-pl-lg-9 {
+	padding-left: 32em;
+}
+
+.local-pl-lg-10 {
+	padding-left: 64em;
+}
+
+.local-py-lg-6 {
+	padding-top: 4em;
+	padding-bottom: 4em;
+}
+
+.local-py-lg-7 {
+	padding-top: 8em;
+	padding-bottom: 8em;
+}
+
+.local-py-lg-8 {
+	padding-top: 16em;
+	padding-bottom: 16em;
+}
+
+.local-py-lg-9 {
+	padding-top: 32em;
+	padding-bottom: 32em;
+}
+
+.local-py-lg-10 {
+	padding-top: 64em;
+	padding-bottom: 64em;
+}
+
+.local-px-lg-6 {
+	padding-left: 4em;
+	padding-right: 4em;
+}
+
+.local-px-lg-7 {
+	padding-left: 8em;
+	padding-right: 8em;
+}
+
+.local-px-lg-8 {
+	padding-left: 16em;
+	padding-right: 16em;
+}
+
+.local-px-lg-9 {
+	padding-left: 32em;
+	padding-right: 32em;
+}
+
+.local-px-lg-10 {
+	padding-left: 64em;
+	padding-right: 64em;
 }
 
 }

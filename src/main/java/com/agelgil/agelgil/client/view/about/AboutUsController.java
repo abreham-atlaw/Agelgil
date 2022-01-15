@@ -16,7 +16,7 @@ class AboutUsController extends ClientController{
 	public String displayAboutUs(
 		ModelMap modelMap
 	){
-		
+
 		return "client/about/about.html";
 	}
 
