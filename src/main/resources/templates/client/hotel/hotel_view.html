@@ -15,12 +15,12 @@
 				</div>
 			</section>
 
-			<div class="col-11 mx-auto">
+			<div class="col-lg-11 col-md-12  mx-auto">
 				<div class="mt-5">
 					<h1 class="font-weight-bold">[[${hotel.name}]]</h1>
 					<span class="text-secondary"><i class="fas fa-map-marker-alt local-fs-4" aria-hidden="true"></i>[[${hotel.location.city}]], Ethiopia</span>
 				</div>
-				<section class="local-mt-7">
+				<section class="local-mt-lg-7 local-mt-6">
 					<div>
 						<h2 class="font-weight-bold">Services</h2>
 					</div>
@@ -35,7 +35,7 @@
 								<div class="accordion-body">
 									<div class="container-fluid">
 										<div class="row py-5">
-											<div th:each="service: ${services}" class="col-3">
+											<div th:each="service: ${services}" class="col-lg-3 col-md-6 col-12 my-3">
 												<div class="card local-br-2 overflow-hidden shadow pb-3">
 													<img th:src="${media.getUrl(service.coverImage)}" class="card-img-top overflow-hidden" th:alt="${service.name}">
 													<div class="card-body">
@@ -64,14 +64,14 @@
 					</div>
 				</section>
 
-				<section class="local-mt-7">
+				<section class="local-mt-lg-7 local-mt-6">
 					<div>
 						<h2 class="font-weight-bold">Description</h2>
 					</div>
 					<p class="mt-5">[[${hotel.description}]]</p>
 				</section>
 
-				<section class="local-mt-7">
+				<section class="local-mt-lg-7 local-mt-6">
 					<div>
 						<h2 class="font-weight-bold">Location</h2>
 					</div>
@@ -80,7 +80,7 @@
 					</div>
 				</section>
 
-				<section class="local-mt-7">
+				<section class="local-mt-lg-7 local-mt-6">
 					<div>
 						<h2 class="font-weight-bold">Gallery</h2>
 					</div>
