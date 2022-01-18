@@ -1,5 +1,8 @@
 package com.agelgil.agelgil.hotel.controllers.dashboard.services;
 
+import java.security.Principal;
+import java.util.List;
+
 import com.agelgil.agelgil.hotel.controllers.dashboard.DashboardController;
 import com.agelgil.agelgil.hotel.data.models.Service;
 import com.agelgil.agelgil.hotel.data.models.Service.ServiceType;
@@ -34,9 +37,9 @@ public class ServicesController extends DashboardController{
 		return "hotel/dashboard/services.html";
 	}
 
-	@ModelAttribute
-	public Iterable<Service> fetchServices(){
-		return serviceRepository.findAll();
+	@ModelAttribute("services")
+	public List<Service> fetchServices(Principal principal){
+		return serviceRepository.findByHotel(getHotel(principal));
 	}
 
 	@ModelAttribute

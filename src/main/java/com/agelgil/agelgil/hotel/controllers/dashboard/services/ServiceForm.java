@@ -6,8 +6,6 @@ import lombok.Data;
 @Data
 public class ServiceForm {
 
-	//TODO: Validation
-	
 	private Long id;
 
 	private String name;

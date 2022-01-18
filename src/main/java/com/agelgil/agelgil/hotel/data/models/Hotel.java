@@ -17,7 +17,9 @@ import javax.persistence.UniqueConstraint;
 import com.agelgil.agelgil.lib.data.models.auth.User;
 import com.agelgil.agelgil.lib.data.models.auth.UserType;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Data
@@ -38,10 +40,8 @@ public class Hotel extends UserType {
 
 	private String name;
 
-//	@Embedded
-//	private Location location; //TODO:
-
-	private String location;
+	@Embedded
+	private Location location;
 
 	private Integer standard;
 
@@ -50,7 +50,9 @@ public class Hotel extends UserType {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "hotel")
 	private List<Service> services;
 
-	public Hotel(User user, String name, String location, int standard, String legalDocuement){
+	private Boolean verified;
+
+	public Hotel(User user, String name, Location location, int standard, String legalDocuement){
 		this.user = user;
 		this.name = name;
 		this.location = location;
@@ -58,13 +60,15 @@ public class Hotel extends UserType {
 		this.legalDocument = legalDocuement;
 	}
 
+	@NoArgsConstructor
+	@AllArgsConstructor
 	@Data
 	@Embeddable
 	public static class Location{
 
-		private Double latitude;
+		private String city;
 
-		private Double longitude;
+		private String plusCode;
 
 	} 
 }

@@ -11,6 +11,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.agelgil.agelgil.hotel.data.models.Hotel;
+import com.agelgil.agelgil.hotel.data.models.Hotel.Location;
 import com.agelgil.agelgil.hotel.data.repositories.HotelRepository;
 import com.agelgil.agelgil.lib.data.models.auth.User;
 import com.agelgil.agelgil.lib.data.models.auth.User.Role;
@@ -45,7 +46,10 @@ public class SignUpForm {
 	private String name;
 
 	@NotBlank
-	private String location;
+	private String city;
+
+	@NotBlank
+	private String plusCode;
 
 	@NotNull
 	@Min(value = 1)
@@ -86,7 +90,10 @@ public class SignUpForm {
 		Hotel hotel = new Hotel(
 			user,
 			name,
-			location,
+			new Location(
+				city,
+				plusCode
+			),
 			standard,
 			storageService.store(legalDocument)
 		);
