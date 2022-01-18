@@ -59,6 +59,12 @@ public class SignUpForm {
 	@NotNull
 	private MultipartFile legalDocument;
 
+	@NotNull
+	private MultipartFile coverImage;
+
+	@NotBlank
+	private String description;
+
 	@NotBlank
 	@Email
 	private String email;
@@ -95,7 +101,10 @@ public class SignUpForm {
 				plusCode
 			),
 			standard,
-			storageService.store(legalDocument)
+			storageService.store(legalDocument),
+			false,
+			storageService.store(coverImage),
+			description
 		);
 		hotelRepository.save(hotel);
 		return hotel;

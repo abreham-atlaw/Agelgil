@@ -78,6 +78,10 @@ public class FileStorageService {
 		}
 	}
 
+	public String getUrl(String fileName){
+		return String.format("/%s/%s", rootLocation.toString(), fileName);
+	}
+
 	public void init() {
 		try{
 			if(Files.notExists(rootLocation))

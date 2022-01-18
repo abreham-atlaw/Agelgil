@@ -133,6 +133,14 @@ ATTRIBUTES = [
 		Attribute("px-9", ["padding-left: 32em;", "padding-right: 32em;"]),
 		Attribute("px-10", ["padding-left: 64em;", "padding-right: 64em;"]),
 
+		Attribute("fs-1", ["font-size: 500% !important;"]),
+		Attribute("fs-2", ["font-size: 300% !important;"]),
+		Attribute("fs-3", ["font-size: 200% !important;"]),
+		Attribute("fs-4", ["font-size: 150% !important;"]),
+		Attribute("fs-5", ["font-size: 75% !important;"]),
+		Attribute("fs-0", ["font-size: 100% !important;"]),
+
+
         ]
 
 if __name__ == "__main__":

@@ -13,12 +13,22 @@
 	</div>
 
 	<div class="mt-4">
-		<label for="location" class="form-label mb-1">Location</label>
+		<label for="plusCode" class="form-label mb-1">City</label>
 		<div class="input-group">
 			<span class="input-group-text bg-light border-right-0"><i class="fas fa-user-alt text-secondary"></i></span>
-			<input type="text" class="form-control border-left-0 bg-light" placeholder="Plus Code(eg. JJXX+HR8, Seattle)" th:field="*{location}" required>
+			<input type="text" class="form-control border-left-0 bg-light" placeholder="City" th:field="*{city}" required>
 		</div>
-		<div th:if="${#fields.hasErrors('location')}" class="text-danger" th:errors="*{location}"></div>
+		<div th:if="${#fields.hasErrors('city')}" class="text-danger" th:errors="*{city}"></div>
+	</div>
+
+
+	<div class="mt-4">
+		<label for="plusCode" class="form-label mb-1">Location</label>
+		<div class="input-group">
+			<span class="input-group-text bg-light border-right-0"><i class="fas fa-user-alt text-secondary"></i></span>
+			<input type="text" class="form-control border-left-0 bg-light" placeholder="Plus Code(eg. JJXX+HR8, Seattle)" th:field="*{plusCode}" required>
+		</div>
+		<div th:if="${#fields.hasErrors('plusCode')}" class="text-danger" th:errors="*{plusCode}"></div>
 	</div>
 
 	<div class="mt-4">
@@ -34,6 +44,21 @@
 		<label for="legalDocument" class="form-label mb-1">Legal Document</label>
 		<input type="file" class="form-control-file" th:field="*{legalDocument}" required>
 		<div th:if="${#fields.hasErrors('legalDocument')}" class="text-danger" th:errors="*{legalDocument}"></div>
+	</div>
+
+	<div class="mt-4">
+		<label for="legalDocument" class="form-label mb-1">Cover Image</label>
+		<input type="file" class="form-control-file" th:field="*{coverImage}" required>
+		<div th:if="${#fields.hasErrors('coverImage')}" class="text-danger" th:errors="*{coverImage}"></div>
+	</div>
+
+	<div class="mt-4">
+		<label for="email" class="form-label mb-1">Description</label>
+		<div class="input-group">
+			<span class="input-group-text bg-light border-right-0"><i class="fas fa-user-alt text-secondary"></i></span>
+			<textarea class="form-control border-left-0 bg-light" placeholder="Description of the hotel..." th:field="*{description}" rows="6" required></textarea>
+		</div>
+		<div th:if="${#fields.hasErrors('description')}" class="text-danger" th:errors="*{description}"></div>
 	</div>
 
 	<div class="mt-4">

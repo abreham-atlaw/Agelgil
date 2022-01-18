@@ -3,6 +3,7 @@ package com.agelgil.agelgil.hotel.data.models;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -14,6 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
+import com.agelgil.agelgil.hotel.data.models.Service.ServiceType;
 import com.agelgil.agelgil.lib.data.models.auth.User;
 import com.agelgil.agelgil.lib.data.models.auth.UserType;
 
@@ -22,6 +24,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
+@NoArgsConstructor
 @Data
 @Entity
 @Table(
@@ -50,14 +53,33 @@ public class Hotel extends UserType {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "hotel")
 	private List<Service> services;
 
-	private Boolean verified;
+	private boolean verified = false;
 
-	public Hotel(User user, String name, Location location, int standard, String legalDocuement){
+	private String coverImage;
+
+	@Column(length = 1000)
+	private String description;
+
+	@OneToMany(mappedBy = "hotel")
+	private List<Image> gallery;
+
+	public Hotel(User user, String name, Location location, int standard, String legalDocuement, boolean verified, String coverImage, String description){
 		this.user = user;
 		this.name = name;
 		this.location = location;
 		this.standard = standard;
 		this.legalDocument = legalDocuement;
+		this.verified = verified;
+		this.coverImage = coverImage;
+		this.description = description;
+	}
+
+	public List<Service> getServiceByType(ServiceType serviceType){
+		return getServices()
+					.stream()
+					.filter(service -> service.getServiceType() == serviceType)
+					.toList();
+
 	}
 
 	@NoArgsConstructor
@@ -71,4 +93,20 @@ public class Hotel extends UserType {
 		private String plusCode;
 
 	} 
+
+	@NoArgsConstructor
+	@AllArgsConstructor
+	@Data
+	@Entity
+	@Table(name = "hotel_hotel_gallery")
+	public static class Image{
+
+		@Id
+		private String file;
+
+		@ManyToOne
+		private Hotel hotel;
+
+
+	}
 }

@@ -7,6 +7,8 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface HotelRepository extends CrudRepository<Hotel, String>{
 	
+	public Hotel findByIdAndVerified(Long id, Boolean verified);
+
 	public Hotel findByUser(User user);
 
 }

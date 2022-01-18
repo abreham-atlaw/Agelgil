@@ -22,9 +22,9 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 public class AgelgilAuthenticationSuccessHandler implements AuthenticationSuccessHandler{
 
 	private final Map<String, String> destinationsMap = new HashMap<String, String>() {{
-		put(Role.ADMIN.name(), "/admin/dashboard");
-		put(Role.CLIENT.name(), "/client/");
-		put(Role.HOTEL.name(), "/hotel/dashboard");
+		put("ROLE_"+Role.ADMIN.name(), "/admin/dashboard");
+		put("ROLE_"+Role.CLIENT.name(), "/client/");
+		put("ROLE_"+Role.HOTEL.name(), "/hotel/dashboard");
 	}};
 
 	private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();

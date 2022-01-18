@@ -318,6 +318,30 @@
 	padding-right: 64em;
 }
 
+.local-fs-1 {
+	font-size: 500% !important;
+}
+
+.local-fs-2 {
+	font-size: 300% !important;
+}
+
+.local-fs-3 {
+	font-size: 200% !important;
+}
+
+.local-fs-4 {
+	font-size: 150% !important;
+}
+
+.local-fs-5 {
+	font-size: 75% !important;
+}
+
+.local-fs-0 {
+	font-size: 100% !important;
+}
+
 
 @media(max-width: 768px){
 
@@ -639,6 +663,30 @@
 .local-px-sm-10 {
 	padding-left: 64em;
 	padding-right: 64em;
+}
+
+.local-fs-sm-1 {
+	font-size: 500% !important;
+}
+
+.local-fs-sm-2 {
+	font-size: 300% !important;
+}
+
+.local-fs-sm-3 {
+	font-size: 200% !important;
+}
+
+.local-fs-sm-4 {
+	font-size: 150% !important;
+}
+
+.local-fs-sm-5 {
+	font-size: 75% !important;
+}
+
+.local-fs-sm-0 {
+	font-size: 100% !important;
 }
 
 }
@@ -966,6 +1014,30 @@
 	padding-right: 64em;
 }
 
+.local-fs-md-1 {
+	font-size: 500% !important;
+}
+
+.local-fs-md-2 {
+	font-size: 300% !important;
+}
+
+.local-fs-md-3 {
+	font-size: 200% !important;
+}
+
+.local-fs-md-4 {
+	font-size: 150% !important;
+}
+
+.local-fs-md-5 {
+	font-size: 75% !important;
+}
+
+.local-fs-md-0 {
+	font-size: 100% !important;
+}
+
 }
 
 
@@ -1289,6 +1361,30 @@
 .local-px-lg-10 {
 	padding-left: 64em;
 	padding-right: 64em;
+}
+
+.local-fs-lg-1 {
+	font-size: 500% !important;
+}
+
+.local-fs-lg-2 {
+	font-size: 300% !important;
+}
+
+.local-fs-lg-3 {
+	font-size: 200% !important;
+}
+
+.local-fs-lg-4 {
+	font-size: 150% !important;
+}
+
+.local-fs-lg-5 {
+	font-size: 75% !important;
+}
+
+.local-fs-lg-0 {
+	font-size: 100% !important;
 }
 
 }

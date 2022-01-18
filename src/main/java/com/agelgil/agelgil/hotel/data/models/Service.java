@@ -10,7 +10,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
+import groovyjarjarantlr4.v4.runtime.ANTLRErrorListener;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Data
@@ -24,6 +27,8 @@ public class Service {
 
 	private String name;
 
+	private String coverImage;
+
 	private Float unitPrice;
 
 	private Integer availableUnits;
@@ -35,6 +40,8 @@ public class Service {
 	private Hotel hotel;
 
 
+	@NoArgsConstructor
+	@AllArgsConstructor
 	@Data
 	@Entity
 	@Table(

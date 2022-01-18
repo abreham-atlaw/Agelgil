@@ -54,7 +54,7 @@ public class AuthConfig{
 	@Bean
 	public SecurityFilterChain filterChain(
 		HttpSecurity httpSecurity,
-		@Qualifier("clientOnlyPatters") List<String> clientOnlyPattens,
+		@Qualifier("clientOnlyPatterns") List<String> clientOnlyPattens,
 		@Qualifier("hotelOnlyPatterns") List<String> hotelOnlyPatterns,
 		@Qualifier("adminOnlyPatterns") List<String> adminOnlyPatterns
 	) throws Exception{
@@ -82,20 +82,22 @@ public class AuthConfig{
 	@Bean 
 	public List<String> hotelOnlyPatterns(){
 		return Arrays.asList(
-			"/hotel/dashboard"
+			"/hotel/dashboard/**"
 		);
 	}
 
 	@Bean 
 	public List<String> adminOnlyPatterns(){
 		return Arrays.asList(
-			"/admin/dashboard"
+			"/admin/dashboard/**"
 		);
 	}
 
 	@Bean 
 	public List<String> clientOnlyPatterns(){
-		return Arrays.asList();
+		return Arrays.asList(
+			"/client/cart/**"
+		);
 	}
 	
 	@Bean
