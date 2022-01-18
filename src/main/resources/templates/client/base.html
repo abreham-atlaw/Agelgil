@@ -39,7 +39,7 @@
 							</div>
 							
 							<div class="d-lg-flex d-block">
-								<div class="d-flex flex-column flex-lg-row mt-5 my-lg-auto" th:if="true">
+								<div class="d-flex flex-column flex-lg-row mt-5 my-lg-auto" th:if="${client}==null">
 									<button class="btn btn-light mx-3" data-bs-toggle="modal" data-bs-target="#loginModal">LOGIN</button>
 									<button class="btn btn-primary mx-3" data-bs-toggle="modal" data-bs-target="#signUpModal">SIGNUP</button>
 
@@ -99,8 +99,8 @@
 										</div>
 									</div>
 								</div>
-								<div class="" th:unless="true">
-									TODO
+								<div class="" th:unless="${client}==null">
+									TODO DROP DOWN MENU
 								</div>
 							</div>
 						</div>

@@ -53,11 +53,11 @@ ATTRIBUTES = [
         Attribute("h-4", ["height: 4em;"]),
         Attribute("h-5", ["height: 5em;"]),
 
-        Attribute("br-1", ["border-radius: 1em;"]),
-        Attribute("br-2", ["border-radius: 2em;"]),
-        Attribute("br-3", ["border-radius: 4em;"]),
-        Attribute("br-4", ["border-radius: 8em;"]),
-        Attribute("br-5", ["border-radius: 16em;"]),
+        Attribute("br-1", ["border-radius: 1em !important;"]),
+        Attribute("br-2", ["border-radius: 2em !important;"]),
+        Attribute("br-3", ["border-radius: 4em !important;;"]),
+        Attribute("br-4", ["border-radius: 8em !important;;"]),
+        Attribute("br-5", ["border-radius: 16em !important;;"]),
 
 		Attribute("mt-6", ["margin-top: 4em;"]),
 		Attribute("mt-7", ["margin-top: 8em;"]),

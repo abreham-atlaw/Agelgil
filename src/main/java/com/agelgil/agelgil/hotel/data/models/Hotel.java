@@ -6,6 +6,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -28,6 +30,7 @@ public class Hotel extends UserType {
 	
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
 	@ManyToOne
@@ -35,8 +38,10 @@ public class Hotel extends UserType {
 
 	private String name;
 
-	@Embedded
-	private Location location;
+//	@Embedded
+//	private Location location; //TODO:
+
+	private String location;
 
 	private Integer standard;
 
@@ -45,6 +50,13 @@ public class Hotel extends UserType {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "hotel")
 	private List<Service> services;
 
+	public Hotel(User user, String name, String location, int standard, String legalDocuement){
+		this.user = user;
+		this.name = name;
+		this.location = location;
+		this.standard = standard;
+		this.legalDocument = legalDocuement;
+	}
 
 	@Data
 	@Embeddable

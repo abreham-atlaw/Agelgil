@@ -39,23 +39,23 @@
 }
 
 .local-br-1 {
-	border-radius: 1em;
+	border-radius: 1em !important;
 }
 
 .local-br-2 {
-	border-radius: 2em;
+	border-radius: 2em !important;
 }
 
 .local-br-3 {
-	border-radius: 4em;
+	border-radius: 4em !important;;
 }
 
 .local-br-4 {
-	border-radius: 8em;
+	border-radius: 8em !important;;
 }
 
 .local-br-5 {
-	border-radius: 16em;
+	border-radius: 16em !important;;
 }
 
 .local-mt-6 {
@@ -362,23 +362,23 @@
 }
 
 .local-br-sm-1 {
-	border-radius: 1em;
+	border-radius: 1em !important;
 }
 
 .local-br-sm-2 {
-	border-radius: 2em;
+	border-radius: 2em !important;
 }
 
 .local-br-sm-3 {
-	border-radius: 4em;
+	border-radius: 4em !important;;
 }
 
 .local-br-sm-4 {
-	border-radius: 8em;
+	border-radius: 8em !important;;
 }
 
 .local-br-sm-5 {
-	border-radius: 16em;
+	border-radius: 16em !important;;
 }
 
 .local-mt-sm-6 {
@@ -687,23 +687,23 @@
 }
 
 .local-br-md-1 {
-	border-radius: 1em;
+	border-radius: 1em !important;
 }
 
 .local-br-md-2 {
-	border-radius: 2em;
+	border-radius: 2em !important;
 }
 
 .local-br-md-3 {
-	border-radius: 4em;
+	border-radius: 4em !important;;
 }
 
 .local-br-md-4 {
-	border-radius: 8em;
+	border-radius: 8em !important;;
 }
 
 .local-br-md-5 {
-	border-radius: 16em;
+	border-radius: 16em !important;;
 }
 
 .local-mt-md-6 {
@@ -1012,23 +1012,23 @@
 }
 
 .local-br-lg-1 {
-	border-radius: 1em;
+	border-radius: 1em !important;
 }
 
 .local-br-lg-2 {
-	border-radius: 2em;
+	border-radius: 2em !important;
 }
 
 .local-br-lg-3 {
-	border-radius: 4em;
+	border-radius: 4em !important;;
 }
 
 .local-br-lg-4 {
-	border-radius: 8em;
+	border-radius: 8em !important;;
 }
 
 .local-br-lg-5 {
-	border-radius: 16em;
+	border-radius: 16em !important;;
 }
 
 .local-mt-lg-6 {

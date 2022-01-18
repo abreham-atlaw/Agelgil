@@ -3,10 +3,10 @@ package com.agelgil.agelgil.lib.di;
 import java.util.Arrays;
 import java.util.List;
 
+import com.agelgil.agelgil.lib.controllers.auth.handlers.AgelgilAuthenticationSuccessHandler;
 import com.agelgil.agelgil.lib.data.models.auth.User;
 import com.agelgil.agelgil.lib.data.repositories.auth.UserRepository;
 import com.agelgil.agelgil.lib.extra.auth.UserManager;
-import com.agelgil.agelgil.lib.view.auth.handlers.AgelgilAuthenticationSuccessHandler;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
