@@ -60,6 +60,9 @@ public class SignUpForm {
 	private MultipartFile legalDocument;
 
 	@NotNull
+	private MultipartFile profileImage;
+
+	@NotNull
 	private MultipartFile coverImage;
 
 	@NotBlank
@@ -103,6 +106,7 @@ public class SignUpForm {
 			standard,
 			storageService.store(legalDocument),
 			false,
+			storageService.store(profileImage),
 			storageService.store(coverImage),
 			description
 		);

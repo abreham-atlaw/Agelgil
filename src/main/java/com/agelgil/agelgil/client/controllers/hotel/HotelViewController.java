@@ -27,7 +27,7 @@ public class HotelViewController extends ClientController{
 	@Autowired
 	private ServiceTypeRepository serviceTypeRepository;
 
-	@GetMapping("/client/hotel/view/{hotel_id:.}")
+	@GetMapping("/client/hotel/view/{hotel_id}")
 	public String displayHotel(@PathVariable(name = "hotel_id") Long hotelId, ModelMap modelMap){
 		Hotel hotel = hotelRepository.findByIdAndVerified(hotelId, true);
 		if(hotel == null)

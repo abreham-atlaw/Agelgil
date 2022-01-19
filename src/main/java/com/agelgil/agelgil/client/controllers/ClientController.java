@@ -38,9 +38,9 @@ public class ClientController extends AgelgilController {
 		modelMap.addAttribute(
 			"headerTabs", Arrays.asList(
 				new Tab(0, "Home", "/", 0, "header"),
-				new Tab(1, "Top Rated", "/top-rated", 1, "header"),
-				new Tab(2,"About Us", "/about-us", 2, "header"),
-				new Tab(3, "Contact Us", "/contact-us", 3, "header")
+				new Tab(1, "Top Rated", "/client/top-rated", 1, "header"),
+				new Tab(2,"About Us", "/client/about-us", 2, "header"),
+				new Tab(3, "Contact Us", "/client/contact-us", 3, "header")
 			)
 		);
 

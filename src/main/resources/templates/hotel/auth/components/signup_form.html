@@ -47,7 +47,13 @@
 	</div>
 
 	<div class="mt-4">
-		<label for="legalDocument" class="form-label mb-1">Cover Image</label>
+		<label for="profileImage" class="form-label mb-1">Profile Image</label>
+		<input type="file" class="form-control-file" th:field="*{profileImage}" required>
+		<div th:if="${#fields.hasErrors('profileImage')}" class="text-danger" th:errors="*{profileImage}"></div>
+	</div>
+
+	<div class="mt-4">
+		<label for="coverImage" class="form-label mb-1">Cover Image</label>
 		<input type="file" class="form-control-file" th:field="*{coverImage}" required>
 		<div th:if="${#fields.hasErrors('coverImage')}" class="text-danger" th:errors="*{coverImage}"></div>
 	</div>

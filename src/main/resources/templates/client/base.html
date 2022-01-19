@@ -29,14 +29,31 @@
 						<div class="ml-lg-auto d-flex flex-column flex-lg-row mt-5 mt-lg-0">
 						
 							<div class="d-flex">
-								<a class="rounded-circle bg-primary text-light d-flex local-w-3 local-h-3 mx-2 shadow-sm">
+								<a class="rounded-circle bg-primary text-light d-flex local-w-3 local-h-3 mx-2 shadow-sm"  data-bs-toggle="modal" data-bs-target="#searchModal">
 									<i class="fas fa-search m-auto"></i>
 								</a>
 								<div class="bg-dark" style="width: 2px;"></div>
 								<a class="rounded-circle bg-white text-primary d-flex local-w-3 local-h-3 mx-2 shadow-sm" href="/client/cart/view">
 									<i class="fas fa-shopping-cart m-auto"></i>
 								</a>
-		
+
+								<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<form class="modal-content" action="/client/search/" method="get">
+											<div class="modal-header">
+												<h5 class="modal-title" id="searchModalLabel">Search</h5>
+												<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+											</div>
+											<div class="modal-body">
+												<input class="form-control" name="q" id="q" placeholder="Search for hotels...">
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+												<button type="submit" class="btn btn-primary">Search</button>
+											</div>
+										</form>
+									</div>
+								</div>
 							</div>
 							
 							<div class="d-lg-flex d-block">

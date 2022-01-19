@@ -48,12 +48,16 @@ public class Hotel extends UserType {
 
 	private Integer standard;
 
+	private Float rating;
+
 	private String legalDocument;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "hotel")
 	private List<Service> services;
 
 	private boolean verified = false;
+
+	private String profileImage;
 
 	private String coverImage;
 
@@ -63,13 +67,14 @@ public class Hotel extends UserType {
 	@OneToMany(mappedBy = "hotel")
 	private List<Image> gallery;
 
-	public Hotel(User user, String name, Location location, int standard, String legalDocuement, boolean verified, String coverImage, String description){
+	public Hotel(User user, String name, Location location, int standard, String legalDocuement, boolean verified,String profileImage, String coverImage, String description){
 		this.user = user;
 		this.name = name;
 		this.location = location;
 		this.standard = standard;
 		this.legalDocument = legalDocuement;
 		this.verified = verified;
+		this.profileImage = profileImage;
 		this.coverImage = coverImage;
 		this.description = description;
 	}
