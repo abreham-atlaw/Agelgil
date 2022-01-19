@@ -50,11 +50,16 @@ public class CartManager {
 		return getCart(principal.getName());
 	}
 
+	public void clearCart(Cart cart){
+		cart.getItems().forEach(item -> cartItemRepository.delete(item));
+	}
+
 	private Cart createCart(Client client){
 		Cart cart = new Cart();
 		cart.setClient(client);
 		cartRepository.save(cart);
 		return cart;
 	}
+
 
 }

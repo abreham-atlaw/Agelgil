@@ -43,11 +43,10 @@
 														<span>ETB [[${service.unitPrice}]] / <span class="text-lowercase">[[${serviceType.unit}]]</span></span>
 	
 														<form class="mt-5" th:action='${"/client/cart/add?redirect_url=/client/hotel/view/"}+${hotel.id}' method="post" th:object="${addToCartForm}">
-															<input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
-															<input type="hidden" th:field="*{service}" th:value="${service.id}">
+															<input type="hidden" th:value="${service.id}" name="service" id="service" >
 	
 															<label class="form-label font-weight-bold" for="units" th:text="${#strings.capitalize(serviceType.unit)}"></label>
-															<input type="number" th:field="*{units}" class="form-control col-5">
+															<input type="number" name="units" id="units" value="1" class="form-control col-5" required>
 	
 															<div class="d-flex mt-4">
 																<input type="submit" value="ADD TO CART" class="btn btn-primary px-4 py-2">

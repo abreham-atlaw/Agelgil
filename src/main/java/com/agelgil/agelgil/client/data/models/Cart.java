@@ -37,6 +37,15 @@ public class Cart {
 
 	@OneToMany(mappedBy = "cart")
 	private List<CartItem> items;
+
+	
+	public float getTotalPrice(){
+		float totalPrice = 0;
+		for( CartItem item : items)
+			totalPrice += item.getPrice();
+		return totalPrice;
+	}
+
 	
 	@NoArgsConstructor
 	@Entity
@@ -48,18 +57,28 @@ public class Cart {
 		@GeneratedValue(strategy = GenerationType.AUTO)
 		private Long id;
 
+		@JoinColumn(nullable = false)
 		@ManyToOne
 		private Service service;
 
+		@JoinColumn(nullable = false)
 		@ManyToOne
 		private Cart cart;
 
-		private Integer quantity;
+		private Integer units;
 
 		public CartItem(Service service, Integer quantity, Cart cart){
 			this.service = service;
-			this.quantity = quantity;
+			this.units = quantity;
 			this.cart = cart;
+		}
+
+		public float getPrice(){
+			return units * service.getUnitPrice();
+		}
+
+		public String toString(){
+			return this.service.getName();
 		}
 
 	}
