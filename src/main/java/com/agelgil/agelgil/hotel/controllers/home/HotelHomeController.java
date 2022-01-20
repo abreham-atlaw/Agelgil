@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
-public class HomeController extends HotelController{
+public class HotelHomeController extends HotelController{
 
 	@Autowired
 	private UserManager userManager;

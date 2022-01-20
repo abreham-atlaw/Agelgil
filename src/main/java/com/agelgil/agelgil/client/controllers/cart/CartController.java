@@ -8,6 +8,7 @@ import com.agelgil.agelgil.client.controllers.ClientController;
 import com.agelgil.agelgil.client.controllers.cart.forms.AddToCartForm;
 import com.agelgil.agelgil.client.controllers.cart.forms.EditCartItemForm;
 import com.agelgil.agelgil.client.controllers.cart.forms.RemoveFromCartForm;
+import com.agelgil.agelgil.client.data.models.Cart;
 import com.agelgil.agelgil.client.data.repositories.CartItemRepository;
 import com.agelgil.agelgil.client.di.CartManager;
 import com.agelgil.agelgil.lib.exceptions.httperror.ForbiddenException;
@@ -102,6 +103,13 @@ public class CartController extends ClientController {
 		editCartItemForm.editCartItem();
 
 		return String.format("redirect:%s", redirectUrl);
+	}
+
+	@PostMapping("/client/cart/checkout")
+	public String checkOut(Principal principal){
+		Cart cart = cartManager.getCart(principal);
+		cartManager.createOrder(cart);
+		return "redirect:/";
 	}
 
 }

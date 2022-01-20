@@ -14,6 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.agelgil.agelgil.hotel.data.models.Order;
 import com.agelgil.agelgil.hotel.data.models.Service;
 
 import lombok.Data;
@@ -46,6 +47,7 @@ public class Cart {
 		return totalPrice;
 	}
 
+
 	
 	@NoArgsConstructor
 	@Entity
@@ -61,11 +63,13 @@ public class Cart {
 		@ManyToOne
 		private Service service;
 
-		@JoinColumn(nullable = false)
 		@ManyToOne
 		private Cart cart;
 
 		private Integer units;
+
+		@ManyToOne
+		private Order order;
 
 		public CartItem(Service service, Integer quantity, Cart cart){
 			this.service = service;

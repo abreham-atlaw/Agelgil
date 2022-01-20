@@ -35,4 +35,15 @@ public class Tab {
 	@Column(nullable = false)
 	private String role;
 
+	private String icon;
+
+
+	public Tab(Integer id, String text, String url, Integer relativeOrder, String role){
+		this.id = id;
+		this.text = text;
+		this.url = url;
+		this.relativeOrder = relativeOrder;
+		this.role = role;
+	}
+
 }

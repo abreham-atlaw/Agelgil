@@ -33,7 +33,8 @@ public class ClientController extends AgelgilController {
 	private UserRepository userRepository;
 
 	@ModelAttribute
-	protected void setupModelMap(ModelMap modelMap, Principal principal){
+	@Override
+	protected void setupModelMap(ModelMap modelMap){
 		super.setupModelMap(modelMap);
 		modelMap.addAttribute(
 			"headerTabs", Arrays.asList(

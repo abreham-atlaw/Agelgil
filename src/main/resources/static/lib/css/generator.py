@@ -53,7 +53,8 @@ ATTRIBUTES = [
         Attribute("h-4", ["height: 4em;"]),
         Attribute("h-5", ["height: 5em;"]),
 
-        Attribute("br-1", ["border-radius: 1em !important;"]),
+        Attribute("br-0", ["border-radius: 0em !important;"]),
+		Attribute("br-1", ["border-radius: 1em !important;"]),
         Attribute("br-2", ["border-radius: 2em !important;"]),
         Attribute("br-3", ["border-radius: 4em !important;;"]),
         Attribute("br-4", ["border-radius: 8em !important;;"]),
@@ -139,6 +140,8 @@ ATTRIBUTES = [
 		Attribute("fs-4", ["font-size: 150% !important;"]),
 		Attribute("fs-5", ["font-size: 75% !important;"]),
 		Attribute("fs-0", ["font-size: 100% !important;"]),
+
+		Attribute("zi-1", ["z-index:5000 !important;"]),
 
 
         ]

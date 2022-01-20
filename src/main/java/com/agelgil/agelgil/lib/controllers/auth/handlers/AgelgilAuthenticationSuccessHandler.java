@@ -23,7 +23,7 @@ public class AgelgilAuthenticationSuccessHandler implements AuthenticationSucces
 
 	private final Map<String, String> destinationsMap = new HashMap<String, String>() {{
 		put("ROLE_"+Role.ADMIN.name(), "/admin/dashboard");
-		put("ROLE_"+Role.CLIENT.name(), "/client/");
+		put("ROLE_"+Role.CLIENT.name(), "/");
 		put("ROLE_"+Role.HOTEL.name(), "/hotel/dashboard");
 	}};
 
