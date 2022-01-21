@@ -9,9 +9,76 @@
 	  </head>
 	<body>
 		
-	<main layout:fragment="main" class="container-fluid">
+	<main layout:fragment="main" class="container-fluid local-mb-8">
 		
-		
+		<div class="row local-pt-8 local-mb-8" style="background-image: url('/static/client/home/images/top_background.jpeg'); background-size: cover;">
+			
+			<div class="col-lg-6 col-12 mx-auto">
+				<h1 class="text-light font-weight-bold pl-0 display-3">FIND THE PERFECT HOTEL</h1>
+				<form class="bg-white border border-dark row p-5 rounded local-br-2 local-mt-6" action="/client/filter/location" method="get" style="margin-bottom: -10em;">
+					<div class="col-lg-6 col-12 my-4">
+						<label for="city" class="form-label mb-1 font-weight-bold">DESTINATION</label>
+						<div class="input-group">
+							<span class="input-group-text bg-light border-right-0"><i class="fas fa-at text-secondary"></i></span>
+							<select class="form-control form-select" name="city" required>
+								<option value="">SELECT</option>
+								<option th:each="city: ${availableCities}" th:value="${city}">[[${city}]]</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-lg-6 col-12 my-4">
+						<label for="check_in" class="form-label mb-1 font-weight-bold">CHECK IN</label>
+						<div class="input-group">
+							<span class="input-group-text bg-light border-right-0"><i class="fas fa-at text-secondary"></i></span>
+							<input class="form-control" type="date" name="check_in" value="1">
+						</div>
+					</div>
+					<div class="col-lg-6 col-12 my-4">
+						<label for="guests" class="form-label mb-1 font-weight-bold">GUESTS</label>
+						<div class="input-group">
+							<span class="input-group-text bg-light border-right-0"><i class="fas fa-at text-secondary"></i></span>
+							<input class="form-control" type="number" name="guests" value="1">
+						</div>
+					</div>
+					<div class="col-lg-6 col-12 my-4">
+						<label for="check_in" class="form-label mb-1 font-weight-bold">CHECK OUT</label>
+						<div class="input-group">
+							<span class="input-group-text bg-light border-right-0"><i class="fas fa-at text-secondary"></i></span>
+							<input class="form-control" type="date" name="check_out" value="1">
+						</div>
+					</div>
+
+					<div class="col-12 d-flex mt-5">
+						<button type="submit" class="px-5 py-3 btn btn-primary mx-auto rounded local-br-1">SEARCH</button>
+					</div>
+				</form>	
+			</div>
+			
+		</div>
+
+		<div class="row local-mt-8 col-lg-11 col-12 p-0 mx-auto">
+
+			<h2 class="font-weight-bold">Locations to visit in Ethiopia</h2>
+
+			<div class="row mt-5 p-0">
+				<div class="col-lg-5 col-12 d-flex">
+					<a href="/client/filter/location?city=Addis+Ababa" class="col-12 mx-auto d-flex local-pt-8 pb-2 px-5" style="background-image: url('/static/client/home/images/addis-ababa.jpg'); background-size: cover; box-shadow: 0 0rem 1rem rgba(0,0,0,0.8) !important">
+						<h3 class="ml-auto text-light">Addis Ababa</h3>
+					</a>
+				</div>
+				<div class="col-lg-3 col-12 d-flex px-4 local-py-lg-6 my-lg-0 my-4">
+					<a href="/client/filter/location?city=Hawassa" class="col-12 mx-auto d-flex local-pt-7 pb-4" style="background-image: url('/static/client/home/images/hawassa.jpg'); background-size: cover; box-shadow: 0 0rem 1rem rgba(0,0,0,0.8) !important">
+						<h3 class="ml-auto text-light">HAWASSA</h3>
+					</a>
+				</div>
+				<div class="col-lg-3 col-12 d-flex px-4 local-py-lg-6">
+					<a href="/client/filter/location?city=Bahirdar" class="col-12 mx-auto d-flex local-pt-7" style="background-image: url('/static/client/home/images/bahirdar.jpg'); background-size: cover; box-shadow: 0 0rem 1rem rgba(0,0,0,0.8) !important">
+						<h3 class="ml-auto text-light">BAHIR DAR</h3>
+					</a>
+				</div>
+			</div>
+
+		</div>
 
 	</main>
 

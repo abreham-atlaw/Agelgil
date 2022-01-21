@@ -5,7 +5,7 @@
 		layout:decorate="~{client/base.html}"
 	  >
 	  <head>
-		  <title layout:fragment="title">[[${searchQuery}]] Search Results | AGELGIL</title>
+		  <title layout:fragment="title">Filter Results | AGELGIL</title>
 	  </head>
 	<body>
 		<main layout:fragment="main" class="container-fluid">
@@ -13,12 +13,12 @@
 			<div class="row">
 				
 				<div class="col-3 border-right border-dark d-lg-block d-none">
-					TODO
 				</div>
-				<div class="col-lg-9 col-12">
-					<h2>Results for "[[${searchQuery}]]"</h2>
-					<div class="row">
-						<div th:each="hotel: ${searchResults}" class="col-lg-4 col-12 my-3">
+				
+				<div class="col-lg-9 col-12 p-5">
+					<h2 class="font-weight-bold" layout:fragment="heading">Results</h2>
+					<div class="row local-mt-6">
+						<div th:each="hotel: ${filterResults}" class="col-lg-4 col-12 my-3">
 							<div class="border border-primary bg-white local-br-2 rounded col-11 mx-auto overflow-hidden p-0 h-100">
 								<div class="w-100"><img th:src="${media.getUrl(hotel.profileImage)}" class="w-100"></div>
 								<div class="p-4">

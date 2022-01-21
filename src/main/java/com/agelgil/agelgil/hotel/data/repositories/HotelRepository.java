@@ -15,4 +15,8 @@ public interface HotelRepository extends CrudRepository<Hotel, String>{
 
 	public List<Hotel> findByVerifiedAndNameContaining(Boolean verified, String name);
 
+	public List<Hotel> findTop10ByVerifiedOrderByRating(Boolean verified);
+
+	public List<Hotel> findByLocationCityAndVerified(String city, Boolean verified);
+
 }
