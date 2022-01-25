@@ -48,7 +48,7 @@ public class Hotel extends UserType {
 
 	private Integer standard;
 
-	private Float rating;
+	private Float rating = 8.4f;
 
 	private String legalDocument;
 

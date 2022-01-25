@@ -74,7 +74,7 @@
 																</div>
 																<div class="local-mt-6">
 																	<p>Don't have an account, yet?</p>
-																	<button type="button" class="btn btn-outline-light rounded-pill px-5">SIGNUP</button>
+																	<button type="button" class="btn btn-outline-light rounded-pill px-5" data-bs-toggle="modal" data-bs-target="#signUpModal">SIGNUP</button>
 																</div>
 															</div>
 														</div>
@@ -106,7 +106,7 @@
 																</div>
 																<div class="local-mt-6">
 																	<p>Already have an account?</p>
-																	<button type="button" class="btn btn-outline-light rounded-pill px-5">SIGN IN</button>
+																	<button type="button" class="btn btn-outline-light rounded-pill px-5" data-bs-toggle="modal" data-bs-target="#loginModal">SIGN IN</button>
 																</div>
 															</div>
 														</div>
@@ -118,7 +118,17 @@
 									</div>
 								</div>
 								<div class="" th:unless="${client}==null">
-									TODO DROP DOWN MENU
+									<div class="bg-primary text-light px-4 py-2 rounded position-relative mx-5 my-auto">
+										<span href="#" class="dropdown-toggle" role="button" data-bs-toggle="dropdown"><i class="fa fa-user"></i><span class="ml-3" th:text="${client.fullName}"></span></span>
+										<ul class="dropdown-menu">
+											<li class="">
+												<form action="/logout" method="post">
+													<input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
+													<input type="submit" value="Logout" class="dropdown-item">
+												</form>
+											</li>
+										</ul>
+									</div>
 								</div>
 							</div>
 						</div>

@@ -10,7 +10,6 @@ import com.agelgil.agelgil.hotel.controllers.home.forms.SignUpForm;
 import com.agelgil.agelgil.hotel.data.models.Hotel;
 import com.agelgil.agelgil.hotel.data.repositories.HotelRepository;
 import com.agelgil.agelgil.lib.data.models.webcontent.Tab;
-import com.agelgil.agelgil.lib.data.repositories.auth.UserRepository;
 import com.agelgil.agelgil.lib.extra.auth.UserManager;
 import com.agelgil.agelgil.lib.services.FileStorageService;
 
@@ -71,10 +70,9 @@ public class HotelHomeController extends HotelController{
 		super.setupModelMap(modelMap);
 		modelMap.addAttribute(
 			"footerTabs", Arrays.asList(
-				new Tab(0, "Home", "/", 0, "footer"),
-				new Tab(2, "FAQs", "/about-us/faqs", 2, "footer"),
-				new Tab(3, "About Us", "/about-us", 3, "footer"),
-				new Tab(4, "Contact Us", "/contact-us", 4, "footer")
+				new Tab(0, "Home", "/hotel", 0, "footer"),
+				new Tab(2, "About Us", "/client/about-us", 3, "footer")
+	//			new Tab(3, "Contact Us", "/contact-us", 4, "footer")
 			)
 		);
 	}

@@ -41,7 +41,7 @@
 																</div>
 																<div class="local-mt-6">
 																	<p>Don't have an account, yet?</p>
-																	<button type="button" class="btn btn-outline-light rounded-pill px-5">SIGNUP</button>
+																	<button type="button" class="btn btn-outline-light rounded-pill px-5" data-bs-toggle="modal" data-bs-target="#signUpModal">SIGNUP</button>
 																</div>
 															</div>
 														</div>
@@ -73,7 +73,7 @@
 																</div>
 																<div class="local-mt-6">
 																	<p>Already have an account?</p>
-																	<button type="button" class="btn btn-outline-light rounded-pill px-5">SIGN IN</button>
+																	<button type="button" class="btn btn-outline-light rounded-pill px-5"  data-bs-toggle="modal" data-bs-target="#loginModal">SIGN IN</button>
 																</div>
 															</div>
 														</div>
@@ -168,7 +168,7 @@
 							<a th:href="${info.url}" th:text="${info.value}" class="link col-8 text-right text-light ml-auto p-0"></a>
 						</div>
 					</div>
-					<a href="/client" class="btn btn-light w-100">AGELGIL FOR CLIENTS</a>
+					<a href="/" class="btn btn-light w-100">AGELGIL FOR CLIENTS</a>
 				</div>
 			</div>
 		</footer>
@@ -184,7 +184,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Login</button>
+						<button class="btn btn-primary" data-bs-target="#loginModal" data-bs-toggle="modal" data-bs-dismiss="modal">Login</button>
 					</div>
 				</div>
 			</div>
