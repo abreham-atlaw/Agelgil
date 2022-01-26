@@ -70,7 +70,12 @@ public class Service {
 		@Enumerated(EnumType.STRING)
 		private Unit unit;
 	
-		private static enum Unit{
+		public ServiceType(String name, Unit unit){
+			this.name = name;
+			this.unit = unit;
+		}
+
+		public static enum Unit{
 			NIGHT, DAY, MONTH, WEEK
 		}
 

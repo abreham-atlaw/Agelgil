@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.management.loading.PrivateMLet;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -60,7 +61,7 @@ public class Cart {
 		private Long id;
 
 		@JoinColumn(nullable = false)
-		@ManyToOne
+		@ManyToOne(cascade = CascadeType.REMOVE)
 		private Service service;
 
 		@ManyToOne
@@ -68,7 +69,7 @@ public class Cart {
 
 		private Integer units;
 
-		@ManyToOne
+		@ManyToOne(cascade = CascadeType.REMOVE)
 		private Order order;
 
 		public CartItem(Service service, Integer quantity, Cart cart){

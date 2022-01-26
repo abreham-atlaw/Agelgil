@@ -22,7 +22,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 public class AgelgilAuthenticationSuccessHandler implements AuthenticationSuccessHandler{
 
 	private final Map<String, String> destinationsMap = new HashMap<String, String>() {{
-		put("ROLE_"+Role.ADMIN.name(), "/admin/dashboard");
+		put("ROLE_"+Role.ADMIN.name(), "/admin/dashboard/hotels");
 		put("ROLE_"+Role.CLIENT.name(), "/");
 		put("ROLE_"+Role.HOTEL.name(), "/hotel/dashboard/services");
 	}};

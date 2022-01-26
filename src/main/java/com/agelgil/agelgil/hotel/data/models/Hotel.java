@@ -52,7 +52,8 @@ public class Hotel extends UserType {
 
 	private String legalDocument;
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "hotel")
+	
+	@OneToMany(mappedBy = "hotel", cascade = CascadeType.REMOVE, orphanRemoval = true)
 	private List<Service> services;
 
 	private boolean verified = false;
@@ -64,7 +65,7 @@ public class Hotel extends UserType {
 	@Column(length = 1000)
 	private String description;
 
-	@OneToMany(mappedBy = "hotel")
+	@OneToMany(mappedBy = "hotel", cascade = CascadeType.REMOVE, orphanRemoval = true)
 	private List<Image> gallery;
 
 	public Hotel(User user, String name, Location location, int standard, String legalDocuement, boolean verified,String profileImage, String coverImage, String description){

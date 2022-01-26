@@ -1,7 +1,11 @@
 package com.agelgil.agelgil;
 
+import java.util.Arrays;
+
 import com.agelgil.agelgil.admin.data.models.Admin;
 import com.agelgil.agelgil.admin.data.repositories.AdminRepository;
+import com.agelgil.agelgil.hotel.data.models.Service.ServiceType;
+import com.agelgil.agelgil.hotel.data.repositories.ServiceTypeRepository;
 import com.agelgil.agelgil.lib.data.models.auth.User;
 import com.agelgil.agelgil.lib.data.models.auth.User.Role;
 import com.agelgil.agelgil.lib.extra.auth.UserManager;
@@ -26,7 +30,8 @@ public class AgelgilApplication {
 	@Bean
 	public CommandLineRunner initialSetup(
 		AdminRepository adminRepository,
-		UserManager userManager
+		UserManager userManager,
+		ServiceTypeRepository serviceTypeRepository
 	){
 
 		return new CommandLineRunner(){
@@ -52,9 +57,23 @@ public class AgelgilApplication {
 
 			}
 
+			private void createServiceTypes(){
+				if(serviceTypeRepository.findAll().iterator().hasNext())
+					return;
+				
+				serviceTypeRepository.saveAll(
+					Arrays.asList(
+						new ServiceType("Rooms", ServiceType.Unit.NIGHT),
+						new ServiceType("Spa", ServiceType.Unit.DAY),
+						new ServiceType("Gym", ServiceType.Unit.MONTH)
+					)
+				);
+			}
+
 			@Override
 			public void run(String... args) throws Exception {
 				createAdminAccount();
+				createServiceTypes();
 			}
 			
 		};

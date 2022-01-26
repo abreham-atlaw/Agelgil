@@ -1,7 +1,5 @@
 package com.agelgil.agelgil.admin.controllers.dashboard.forms;
 
-import javax.persistence.Transient;
-
 import com.agelgil.agelgil.hotel.data.models.Hotel;
 import com.agelgil.agelgil.hotel.data.repositories.HotelRepository;
 
@@ -13,14 +11,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class VertifyHotelForm {
+public class DeleteHotelForm {
 	
-
 	private Hotel hotel;
 
-	public void verifyHotel(HotelRepository hotelRepository){
-		hotel.setVerified(true);
-		hotelRepository.save(hotel);
+	public void deleteHotel(HotelRepository hotelRepository){
+		hotelRepository.delete(hotel);
 	}
 
 }
