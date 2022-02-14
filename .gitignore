@@ -48,7 +48,7 @@ build/
 */.grunt
 */_SpecRunner.html
 */__benchmarks__
-*/build/
+src/main/frontend/build
 */remote-repo/
 */coverage/
 */.module-cache
