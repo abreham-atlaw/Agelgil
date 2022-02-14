@@ -23,7 +23,7 @@ public class ManageClientsController extends AdminController{
 			"clients", clientRepository.findAll()
 		);
 
-		return "/admin/dashboard/manage_clients.html";
+		return "admin/dashboard/manage_clients.html";
 
 	}
 

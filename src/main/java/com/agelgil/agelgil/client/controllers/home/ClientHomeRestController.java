@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ClientHomeRestController {
 
+	@Value("${com.agelgil.agelgil.host}")
+	private String host;
 
 
 	
@@ -21,9 +23,9 @@ public class ClientHomeRestController {
 		
 		return ResponseEntity.ok(
 			Arrays.asList(
-				new City(1l, "Addis Ababa", "http://localhost:8080/static/res/client/home/images/addis-ababa.jpg"),
-				new City(2l, "Hawassa", "http://localhost:8080/static/res/client/home/images/hawassa.jpg"),
-				new City(3l, "Debre Zeit", "http://localhost:8080/static/res/client/home/images/bahirdar.jpg")
+				new City(1l, "Addis Ababa",  String.format("%s/static/res/client/home/images/addis-ababa.jpg", host)),
+				new City(2l, "Hawassa", String.format("%s/static/res/client/home/images/hawassa.jpg", host)),
+				new City(3l, "Debre Zeit", String.format("%s/static/res/client/home/images/bahirdar.jpg", host))
 			)
 		);
 

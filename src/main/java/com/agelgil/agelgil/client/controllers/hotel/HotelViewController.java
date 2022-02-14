@@ -35,7 +35,7 @@ public class HotelViewController extends ClientController{
 		modelMap.addAttribute("hotel", hotel);
 		modelMap.addAttribute("serviceTypes", serviceTypeRepository.findAll());
 		
-		return "/client/hotel/hotel_view.html";
+		return "client/hotel/hotel_view.html";
 
 	}
 

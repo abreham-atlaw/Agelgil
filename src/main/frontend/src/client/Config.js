@@ -1,7 +1,7 @@
 
 class Config{
 
-	static BACKEND_URL = "http://localhost:8080"
+	static BACKEND_URL = "https://agelgil.herokuapp.com/"
 
 	static API_URL = `${Config.BACKEND_URL}/api/client`
 

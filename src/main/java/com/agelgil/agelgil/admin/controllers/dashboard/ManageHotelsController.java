@@ -40,7 +40,7 @@ public class ManageHotelsController extends AdminController{
 			"hotels", hotelRepository.findAll()
 		);
 
-		return "/admin/dashboard/manage_hotels.html";
+		return "admin/dashboard/manage_hotels.html";
 
 	}
 
