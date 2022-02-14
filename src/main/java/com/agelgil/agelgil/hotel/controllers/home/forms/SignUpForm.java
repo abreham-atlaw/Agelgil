@@ -18,6 +18,7 @@ import com.agelgil.agelgil.lib.data.models.auth.VerificationToken;
 import com.agelgil.agelgil.lib.data.models.auth.User.Role;
 import com.agelgil.agelgil.lib.extra.auth.UserManager;
 import com.agelgil.agelgil.lib.services.FileStorageService;
+import com.agelgil.agelgil.lib.services.StorageService;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -34,9 +35,9 @@ public class SignUpForm {
 	private HotelRepository hotelRepository;
 
 	@Transient
-	private FileStorageService storageService;
+	private StorageService storageService;
 
-	public SignUpForm(UserManager userManager, HotelRepository hotelRepository, FileStorageService storageService){
+	public SignUpForm(UserManager userManager, HotelRepository hotelRepository, StorageService storageService){
 		this.userManager = userManager;
 		this.hotelRepository = hotelRepository;
 		this.storageService = storageService;

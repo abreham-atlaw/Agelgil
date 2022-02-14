@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 import com.agelgil.agelgil.lib.data.models.webcontent.ContactInformation;
 import com.agelgil.agelgil.lib.data.repositories.webcontent.ContactInformationRespository;
-import com.agelgil.agelgil.lib.services.FileStorageService;
+import com.agelgil.agelgil.lib.services.DropBoxService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
@@ -18,7 +18,7 @@ public class AgelgilController {
 	private ContactInformationRespository contactInformationRespository;
 
 	@Autowired
-	private FileStorageService storageService;
+	private DropBoxService storageService;
 
 	@ModelAttribute
 	protected void setupModelMap(ModelMap modelMap){
@@ -35,7 +35,7 @@ public class AgelgilController {
 	}
 
 	@ModelAttribute("media")
-	protected FileStorageService fetchStorageService(){
+	protected DropBoxService fetchStorageService(){
 		return storageService;
 	}
 

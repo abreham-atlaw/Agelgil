@@ -14,6 +14,7 @@ import com.agelgil.agelgil.hotel.data.repositories.CityRepository;
 import com.agelgil.agelgil.hotel.data.repositories.HotelRepository;
 import com.agelgil.agelgil.lib.data.models.webcontent.Tab;
 import com.agelgil.agelgil.lib.extra.auth.UserManager;
+import com.agelgil.agelgil.lib.services.DropBoxService;
 import com.agelgil.agelgil.lib.services.FileStorageService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +40,7 @@ public class HotelHomeController extends HotelController{
 	private CityRepository cityRepository;
 
 	@Autowired
-	private FileStorageService storageService;
+	private DropBoxService storageService;
 
 	@GetMapping("/hotel")
 	public String displayHomePage(

@@ -17,7 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 
 @Service
-public class FileStorageService {
+public class FileStorageService extends StorageService{
 	
 	private final Path rootLocation = Paths.get("media");
 
@@ -25,6 +25,7 @@ public class FileStorageService {
 		init();
 	}
 
+	@Override
 	public String store(MultipartFile file){
 		
 		try {
@@ -53,10 +54,6 @@ public class FileStorageService {
 
 	}
 
-	private String generateFileName(MultipartFile file){
-		return String.format("%d_%s", System.currentTimeMillis(), file.getOriginalFilename());
-	}
-
 	public Path load(String filename) {
 		return rootLocation.resolve(filename);
 	}
@@ -78,6 +75,7 @@ public class FileStorageService {
 		}
 	}
 
+	@Override
 	public String getUrl(String fileName){
 		return String.format("/%s/%s", rootLocation.toString(), fileName);
 	}
