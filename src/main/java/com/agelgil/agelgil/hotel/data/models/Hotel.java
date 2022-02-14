@@ -1,6 +1,8 @@
 package com.agelgil.agelgil.hotel.data.models;
 
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -85,7 +87,9 @@ public class Hotel extends UserType {
 		return getServices()
 					.stream()
 					.filter(service -> service.getServiceType() == serviceType)
-					.toList();
+					.collect(
+						Collectors.toList()
+					);
 
 	}
 

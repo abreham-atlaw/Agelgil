@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import com.agelgil.agelgil.client.data.models.Cart;
 import com.agelgil.agelgil.client.data.models.Client;
@@ -93,7 +94,7 @@ public class CartManager {
 	private List<CartItem> filterByHotel(Cart cart, final Hotel hotel){
 		return cart.getItems().stream().filter(
 			item -> item.getService().getHotel().equals(hotel)
-		).toList();
+		).collect(Collectors.toList());
 	}
 
 	private Set<Hotel> getHotels(Cart cart){
