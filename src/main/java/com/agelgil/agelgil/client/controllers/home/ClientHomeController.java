@@ -22,7 +22,7 @@ public class ClientHomeController extends ClientController{
 	@GetMapping("/")
 	public String home(){
 
-		return "/client/home/home.html";
+		return "client/home/home";
 	}
 	
 
