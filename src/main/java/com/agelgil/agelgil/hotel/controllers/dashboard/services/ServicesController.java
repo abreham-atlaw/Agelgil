@@ -10,7 +10,7 @@ import com.agelgil.agelgil.hotel.data.models.Service;
 import com.agelgil.agelgil.hotel.data.models.Service.ServiceType;
 import com.agelgil.agelgil.hotel.data.repositories.ServiceRepository;
 import com.agelgil.agelgil.hotel.data.repositories.ServiceTypeRepository;
-import com.agelgil.agelgil.lib.services.FileStorageService;
+import com.agelgil.agelgil.lib.services.DropBoxService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,7 +30,7 @@ public class ServicesController extends DashboardController{
 	private ServiceTypeRepository serviceTypeRepository;
 	
 	@Autowired
-	private FileStorageService storageService;
+	private DropBoxService storageService;
 
 
 	@GetMapping("/hotel/dashboard/services")

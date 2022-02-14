@@ -15,7 +15,6 @@ import com.agelgil.agelgil.hotel.data.repositories.HotelRepository;
 import com.agelgil.agelgil.lib.data.models.webcontent.Tab;
 import com.agelgil.agelgil.lib.extra.auth.UserManager;
 import com.agelgil.agelgil.lib.services.DropBoxService;
-import com.agelgil.agelgil.lib.services.FileStorageService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

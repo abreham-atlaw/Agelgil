@@ -5,7 +5,7 @@ import com.agelgil.agelgil.hotel.data.models.Hotel;
 import com.agelgil.agelgil.hotel.data.models.Service;
 import com.agelgil.agelgil.hotel.data.models.Service.ServiceType;
 import com.agelgil.agelgil.hotel.data.repositories.ServiceRepository;
-import com.agelgil.agelgil.lib.services.FileStorageService;
+import com.agelgil.agelgil.lib.services.StorageService;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -30,7 +30,7 @@ public class AddServiceForm {
 	private Integer availableUnits;
 
 	
-	public Service createService(FileStorageService storageService, ServiceRepository serviceRepository, Hotel hotel){
+	public Service createService(StorageService storageService, ServiceRepository serviceRepository, Hotel hotel){
 		
 		Service service = new Service(
 			name,

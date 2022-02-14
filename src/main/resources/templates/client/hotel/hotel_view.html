@@ -70,10 +70,45 @@
 					<p class="mt-5">[[${hotel.description}]]</p>
 				</section>
 
-			</div>
+				<section class="local-my-lg-7 local-my-6">
+					<div>
+						<h2 class="font-weight-bold">Location</h2>
+					</div>
+					<div class="mt-5 border border-dark" id="mapContainer" style="height: 40em;">
+					</div>
+				</section>
 
-			
-			
+			</div>
 		</main>
+		<div layout:fragment="extraJs">
+			<link rel="stylesheet" href="/static/res/lib/leaflet/leaflet.css">
+			<script src="/static/res/lib/leaflet/leaflet.js"></script>
+
+			<script type="text/javascript">
+
+				function parseLocation(locationString){
+					let locationTuple = locationString.split(",");
+					return {
+						'lat': locationTuple[0],
+						'lon': locationTuple[1]
+					}
+				}
+
+				var hotelLocationString = "[[${hotel.location.plusCode}]]";
+				let hotelLocation = parseLocation(hotelLocationString);
+				var map = L.map('mapContainer').setView([hotelLocation.lat, hotelLocation.lon], 14);
+		
+				L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+					attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+				}).addTo(map);
+		
+				L.marker([hotelLocation.lat, hotelLocation.lon]).addTo(map)
+					.bindPopup('Location');
+
+				
+					
+
+			</script>
+		</div>
 	</body>
 </html>		
