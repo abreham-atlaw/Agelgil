@@ -5,16 +5,16 @@
 	<head>
 		<title layout:fragment="title">Agelgil Hotel</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 	
-		<link rel="stylesheet" th:href="@{/static/hotel/libs/bootstrap/bootstrap.min.css}">
-		<link rel="stylesheet" th:href="@{/static/lib/fontawesome/css/all.css}">
-		<link rel="stylesheet" th:href="@{/static/lib/css/local.css}">
+		<link rel="stylesheet" th:href="@{/static/res/hotel/libs/bootstrap/bootstrap.min.css}">
+		<link rel="stylesheet" th:href="@{/static/res/lib/fontawesome/css/all.css}">
+		<link rel="stylesheet" th:href="@{/static/res/lib/css/local.css}">
 	</head>
 	<body class="bg-light">
-		<header class="" style="background-image:url('/static/hotel/home/images/paris.jpg'); background-size:cover;">
+		<header class="" style="background-image:url('/static/res/hotel/home/images/paris.jpg'); background-size:cover;">
 			<nav class="navbar navbar-expand-lg navbar-light py-md-5 px-xl-5">
 				<div class="container-fluid">
 					<a class="navbar-brand col-lg-2 col-md-4 col-6 p-0 bg-light rounded p-3 local-br-1" href="/" >
-						<img th:src="@{/static/hotel/core/images/logo-horizontal.png}" class="col-10 p-0">
+						<img th:src="@{/static/res/hotel/core/images/logo-horizontal.png}" class="col-10 p-0">
 					</a>
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon text-light"></span>
@@ -154,7 +154,7 @@
 				</ul>
 				<div class="col-lg-3 col-md-6 col-sm-9 col-11 mx-auto my-5 my-lg-auto">
 					<div class="col-7 p-3 bg-white local-br-2 m-auto">
-						<img th:src="@{/static/hotel/core/images/logo-horizontal.png}" class="w-100">
+						<img th:src="@{/static/res/hotel/core/images/logo-horizontal.png}" class="w-100">
 					</div>
 					<div class="text-center mt-3">
 						Copyright &copy; 2021 | Agelgil 
@@ -189,7 +189,7 @@
 				</div>
 			</div>
 		</div>
-		<script th:src="@{/static/lib/js/bootstrap.bundle.min.js}"></script>
+		<script th:src="@{/static/res/lib/js/bootstrap.bundle.min.js}"></script>
 		<script th:if="${signUpError}">
 			var signUpModal = new bootstrap.Modal(document.getElementById('signUpModal'), {});
 			signUpModal.show();

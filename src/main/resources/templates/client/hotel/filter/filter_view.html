@@ -10,38 +10,7 @@
 	<body>
 		<main layout:fragment="main" class="container-fluid">
 
-			<div class="row">
-				
-				<div class="col-3 border-right border-dark d-lg-block d-none">
-				</div>
-				
-				<div class="col-lg-9 col-12 p-5">
-					<h2 class="font-weight-bold" layout:fragment="heading">Results</h2>
-					<div class="row local-mt-6">
-						<div th:each="hotel: ${filterResults}" class="col-lg-4 col-12 my-3">
-							<div class="border border-primary bg-white local-br-2 rounded col-11 mx-auto overflow-hidden p-0 h-100">
-								<div class="w-100"><img th:src="${media.getUrl(hotel.profileImage)}" class="w-100"></div>
-								<div class="p-4">
-									<h3 class="font-weight-bold">[[${hotel.name}]]</h3>
-									<span class="text-secondary"><i class="fas fa-map-marker-alt local-fs-4" aria-hidden="true"></i>[[${hotel.location.city}]], Ethiopia</span>
-									
-
-									<div class="mt-4">
-										<i th:each="i: ${#numbers.sequence(0, hotel.standard-1)}" class="fas fa-star text-warning local-fs-4"></i>
-									</div>
-									<div class="d-flex mt-2">
-										<span class="px-3 py-2 font-weight-bold bg-success rounded text-white">[[${hotel.rating}]]</span>
-									</div>
-
-									<a th:href='${"/client/hotel/view/"}+${hotel.id}' class="btn btn-primary mt-5 font-weight-bold local-br-1 px-4">
-										VIEW <i class="fa fa-arrow-right" aria-hidden="true"></i>
-									</a>
-								</div>
-							</div>
-							
-						</div>
-					</div>
-				</div>
+			<div class="row" id="reactRoot">
 
 			</div>
 

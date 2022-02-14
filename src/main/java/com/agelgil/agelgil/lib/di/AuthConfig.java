@@ -20,6 +20,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 
 
@@ -60,6 +63,8 @@ public class AuthConfig{
 	) throws Exception{
 
 		return httpSecurity
+							.cors()
+							.and()
 							.authorizeRequests()
 							.antMatchers(clientOnlyPattens.toArray(new String[0])).hasRole(User.Role.CLIENT.name())
 							.antMatchers(hotelOnlyPatterns.toArray(new String[0])).hasRole(User.Role.HOTEL.name())
@@ -73,6 +78,13 @@ public class AuthConfig{
 							.build();
 
 	}
+
+	@Bean
+    CorsConfigurationSource corsConfigurationSource() {
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
+        return source;
+    }
 
 	@Bean
 	public AuthenticationSuccessHandler authenticationSuccessHandler(){

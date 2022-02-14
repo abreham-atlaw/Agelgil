@@ -18,6 +18,7 @@ import javax.persistence.UniqueConstraint;
 import com.agelgil.agelgil.hotel.data.models.Service.ServiceType;
 import com.agelgil.agelgil.lib.data.models.auth.User;
 import com.agelgil.agelgil.lib.data.models.auth.UserType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -38,6 +39,7 @@ public class Hotel extends UserType {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
+	@JsonIgnore
 	@ManyToOne
 	private User user;
 
@@ -51,11 +53,11 @@ public class Hotel extends UserType {
 	private Float rating = 8.4f;
 
 	private String legalDocument;
-
 	
 	@OneToMany(mappedBy = "hotel", cascade = CascadeType.REMOVE, orphanRemoval = true)
 	private List<Service> services;
 
+	@JsonIgnore
 	private boolean verified = false;
 
 	private String profileImage;
