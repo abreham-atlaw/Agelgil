@@ -47,7 +47,7 @@ public class CartManager {
 
 	public Cart getCart(String username){
 		Client client = clientRepository.findByUser(
-			userRepository.findByUsername(username)
+			userRepository.findByUsernameAndVerified(username, true)
 			);
 		if(client.getCart() == null)
 			return createCart(client);

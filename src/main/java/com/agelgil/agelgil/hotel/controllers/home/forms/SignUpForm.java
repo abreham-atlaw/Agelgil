@@ -14,6 +14,7 @@ import com.agelgil.agelgil.hotel.data.models.Hotel;
 import com.agelgil.agelgil.hotel.data.models.Hotel.Location;
 import com.agelgil.agelgil.hotel.data.repositories.HotelRepository;
 import com.agelgil.agelgil.lib.data.models.auth.User;
+import com.agelgil.agelgil.lib.data.models.auth.VerificationToken;
 import com.agelgil.agelgil.lib.data.models.auth.User.Role;
 import com.agelgil.agelgil.lib.extra.auth.UserManager;
 import com.agelgil.agelgil.lib.services.FileStorageService;
@@ -96,6 +97,7 @@ public class SignUpForm {
 
 	public Hotel createHotel(){
 		User user = userManager.createUser(email, password, Role.HOTEL);
+
 		Hotel hotel = new Hotel(
 			user,
 			name,
@@ -105,10 +107,10 @@ public class SignUpForm {
 			),
 			standard,
 			storageService.store(legalDocument),
-			false,
 			storageService.store(profileImage),
 			storageService.store(coverImage),
-			description
+			description,
+			false
 		);
 		hotelRepository.save(hotel);
 		return hotel;

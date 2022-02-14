@@ -2,12 +2,15 @@ package com.agelgil.agelgil.hotel.controllers.home;
 
 import java.security.Principal;
 import java.util.Arrays;
+import java.util.List;
 
 import javax.validation.Valid;
 
 import com.agelgil.agelgil.hotel.controllers.HotelController;
 import com.agelgil.agelgil.hotel.controllers.home.forms.SignUpForm;
+import com.agelgil.agelgil.hotel.data.models.City;
 import com.agelgil.agelgil.hotel.data.models.Hotel;
+import com.agelgil.agelgil.hotel.data.repositories.CityRepository;
 import com.agelgil.agelgil.hotel.data.repositories.HotelRepository;
 import com.agelgil.agelgil.lib.data.models.webcontent.Tab;
 import com.agelgil.agelgil.lib.extra.auth.UserManager;
@@ -31,6 +34,9 @@ public class HotelHomeController extends HotelController{
 
 	@Autowired
 	private HotelRepository hotelRepository;
+
+	@Autowired
+	private CityRepository cityRepository;
 
 	@Autowired
 	private FileStorageService storageService;
@@ -80,6 +86,11 @@ public class HotelHomeController extends HotelController{
 	@ModelAttribute
 	private SignUpForm signUpForm(){
 		return new SignUpForm(userManager, hotelRepository, storageService);
+	}
+
+	@ModelAttribute("cities")
+	private Iterable<City> cities(){
+		return cityRepository.findAll();
 	}
 
 }

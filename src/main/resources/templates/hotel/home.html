@@ -85,7 +85,17 @@
 									</div>
 								</div>
 								<div class="" th:unless="${hotel}==null">
-									TODO DROP DOWN MENU
+									<div class="bg-primary text-light px-4 py-2 rounded position-relative mx-5 my-auto">
+										<span href="#" class="dropdown-toggle" role="button" data-bs-toggle="dropdown"><i class="fa fa-user"></i><span class="ml-3" th:text="${hotel.name}"></span></span>
+										<ul class="dropdown-menu">
+											<li class="">
+												<form action="/logout" method="post">
+													<input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
+													<input type="submit" value="Logout" class="dropdown-item">
+												</form>
+											</li>
+										</ul>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -176,15 +186,14 @@
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="successModalLabel">Account Created Successfully</h5>
+						<h5 class="modal-title" id="successModalLabel">Reviewing Your Account</h5>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
-						Your account has been successfully created. Our people will look into it and verify it as soon as possible. Till then you can login and setup your profile and services.
+						Almost Done! Your account is being reviewed. Our people will look into it and verify it as soon as possible. Once verified a verification Link will be sent to your account.
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-						<button class="btn btn-primary" data-bs-target="#loginModal" data-bs-toggle="modal" data-bs-dismiss="modal">Login</button>
 					</div>
 				</div>
 			</div>

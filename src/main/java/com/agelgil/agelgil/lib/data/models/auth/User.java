@@ -30,9 +30,7 @@ public class User implements UserDetails{
 
 	private String password;
 
-	private boolean enabled;
-
-	private boolean tokenExpired;
+	private boolean verified;
 
 	@Enumerated(EnumType.STRING)
 	private Role role;
@@ -47,17 +45,22 @@ public class User implements UserDetails{
 
 	@Override
 	public boolean isCredentialsNonExpired() {
-		return true; // TODO
+		return true;
 	}
 
 	@Override
 	public boolean isAccountNonExpired() {
-		return true; // TODO
+		return true;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
-		return true; // TODO: 
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return this.isVerified();
 	}
 
 	public static enum Role{
@@ -65,6 +68,8 @@ public class User implements UserDetails{
 		HOTEL,
 		ADMIN
 	}
+
+	
 
 
 }

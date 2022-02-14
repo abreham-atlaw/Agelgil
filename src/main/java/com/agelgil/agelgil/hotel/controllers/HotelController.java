@@ -24,8 +24,9 @@ public class HotelController extends AgelgilController{
 		if(principal == null)
 			return null;
 		
-		return hotelRepository.findByUser(
-			userRepository.findByUsername(principal.getName())
+		return hotelRepository.findByUserAndUserVerified(
+			userRepository.findByUsernameAndVerified(principal.getName(), true),
+			true
 		);
 	}
 

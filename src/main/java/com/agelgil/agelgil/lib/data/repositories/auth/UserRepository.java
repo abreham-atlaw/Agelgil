@@ -8,6 +8,6 @@ import org.springframework.data.repository.CrudRepository;
 public interface UserRepository extends CrudRepository<User, String>{
 
 
-	public User findByUsername(String username);
+	public User findByUsernameAndVerified(String username, Boolean verified);
 	
 }

@@ -115,11 +115,15 @@ class FilterForm extends React.Component{
 
 					<label className="mt-4 d-block">
 						<span className="d-block form-label fw-bold">City</span>
-						<select name="city" className="form-control form-select" onChange={this.changeCallback}>
+						<select name="city" className="form-control form-select" onChange={this.changeCallback} defaultValue={this.getInitialValue("city")}>
 							<option value="">All</option>
 							{
 								this.getCities().map((city, index) => {
-									return <option value={city.name} key={city.name}>{city.name}</option>
+									return (this.getInitialValue("city") != null && this.getInitialValue("city").toLowerCase() === city.name.toLowerCase()) ?
+									
+									(<option value={city.name} key={city.name} selected>{city.name}</option>) :
+
+									(<option value={city.name} key={city.name}>{city.name}</option>)
 								})
 							}
 						</select>
@@ -245,6 +249,7 @@ class FilterApplication extends ClientApplication{
 		};
 		this.onFormChange = this.onFormChange.bind(this);
 		this.setFilterResults = this.setFilterResults.bind(this);
+		this.fetchFilterResults = this.fetchFilterResults.bind(this);
 		this.form = null;
 	}
 
@@ -286,7 +291,7 @@ class FilterApplication extends ClientApplication{
 
 	componentDidMount(){
 		super.componentDidMount();
-		this.fetchFilterResults();
+		setTimeout(this.fetchFilterResults, 1000);
 	}
 
 	render(){

@@ -19,21 +19,10 @@ public class FilterController extends ClientController{
 	@Autowired
 	protected HotelRepository hotelRepository;
 
-	// @GetMapping("/client/hotel/search/")
-	// public String search(
-	// 	@RequestParam(name = "q") String query,
-	// 	ModelMap modelMap
-	// 	){
-	// 		setFilterResults(hotelRepository.findByVerifiedAndNameContaining(true, query), modelMap);
-	// 		modelMap.addAttribute("searchQuery", query);
-	// 		return "client/hotel/filter/search.html";
-	// }
-
 	@GetMapping("/client/hotel/filter")
 	public String filterByLocation(
 	){
 		return "client/hotel/filter/filter_view.html";
 	}
-
 
 }

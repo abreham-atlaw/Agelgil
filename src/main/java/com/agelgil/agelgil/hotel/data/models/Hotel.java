@@ -57,12 +57,11 @@ public class Hotel extends UserType {
 	@OneToMany(mappedBy = "hotel", cascade = CascadeType.REMOVE, orphanRemoval = true)
 	private List<Service> services;
 
-	@JsonIgnore
-	private boolean verified = false;
-
 	private String profileImage;
 
 	private String coverImage;
+
+	private Boolean verified = false;
 
 	@Column(length = 1000)
 	private String description;
@@ -70,16 +69,16 @@ public class Hotel extends UserType {
 	@OneToMany(mappedBy = "hotel", cascade = CascadeType.REMOVE, orphanRemoval = true)
 	private List<Image> gallery;
 
-	public Hotel(User user, String name, Location location, int standard, String legalDocuement, boolean verified,String profileImage, String coverImage, String description){
+	public Hotel(User user, String name, Location location, int standard, String legalDocuement,String profileImage, String coverImage, String description, Boolean verified){
 		this.user = user;
 		this.name = name;
 		this.location = location;
 		this.standard = standard;
 		this.legalDocument = legalDocuement;
-		this.verified = verified;
 		this.profileImage = profileImage;
 		this.coverImage = coverImage;
 		this.description = description;
+		this.verified = verified;
 	}
 
 	public List<Service> getServiceByType(ServiceType serviceType){

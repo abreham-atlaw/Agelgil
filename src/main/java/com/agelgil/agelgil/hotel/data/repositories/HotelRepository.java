@@ -10,16 +10,10 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface HotelRepository extends CrudRepository<Hotel, Long>, JpaSpecificationExecutor<Hotel>{
 	
-	public Hotel findByIdAndVerified(Long id, Boolean verified);
+	public Hotel findByIdAndUserVerified(Long id, Boolean verified);
 
-	public Hotel findByUser(User user);
+	public Hotel findByUserAndUserVerified(User user, Boolean verified);
 
-	public List<Hotel> findByVerifiedAndNameContaining(Boolean verified, String name);
-
-	public List<Hotel> findTop10ByVerifiedOrderByRating(Boolean verified);
-
-	public List<Hotel> findByLocationCityAndVerified(String city, Boolean verified);
-
-	public List<Hotel> findByVerified(Boolean verified);
+	public List<Hotel> findByUserVerified(Boolean verified);
 
 }

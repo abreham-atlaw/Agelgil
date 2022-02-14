@@ -44,15 +44,15 @@ public class AgelgilApplication {
 			private void createAdminAccount(){
 				String ADMIN_USERNAME = "admin@agelgil.com";
 				String ADMIN_PASSWORD = "adminpassword";
-				String ADMIN_FIRST_NAME = "Betsegaw";
-				String ADMIN_LAST_NAME = "Lemma";
+				String ADMIN_FIRST_NAME = "John";
+				String ADMIN_LAST_NAME = "Doe";
 
 
 				if(userManager.userExists(ADMIN_USERNAME)){
 					log.info("Admin Already Creating. Skipping...");
 					return;
 				}
-				User adminUser = userManager.createUser(ADMIN_USERNAME, ADMIN_PASSWORD, Role.ADMIN);
+				User adminUser = userManager.createUser(ADMIN_USERNAME, ADMIN_PASSWORD, Role.ADMIN, true);
 				adminRepository.save(
 					new Admin(adminUser, ADMIN_FIRST_NAME, ADMIN_LAST_NAME)
 				);
@@ -82,7 +82,7 @@ public class AgelgilApplication {
 					"Mekelle",
 					"Gondar",
 					"Adama",
-					"Awassa",
+					"Hawassa",
 					"Bahir Dar",
 					"Dire Dawa",
 					"Sodo",

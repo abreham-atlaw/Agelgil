@@ -9,9 +9,10 @@ import javax.validation.constraints.Size;
 import com.agelgil.agelgil.client.data.models.Client;
 import com.agelgil.agelgil.client.data.repositories.ClientRepository;
 import com.agelgil.agelgil.lib.data.models.auth.User;
+import com.agelgil.agelgil.lib.data.models.auth.VerificationToken;
 import com.agelgil.agelgil.lib.data.models.auth.User.Role;
 import com.agelgil.agelgil.lib.extra.auth.UserManager;
-
+import com.agelgil.agelgil.lib.services.EmailService;
 
 import lombok.Data;
 
@@ -21,6 +22,9 @@ public class SignUpForm {
 
 	@Transient
 	private UserManager userManager;
+
+	@Transient
+	private EmailService emailService;
 
 	public SignUpForm(){
 
@@ -58,11 +62,12 @@ public class SignUpForm {
 	}
 
 
-
-	
-	public Client createClient(UserManager manager, ClientRepository clientRepository){
+	public Client createClient(UserManager manager, ClientRepository clientRepository, EmailService emailService){
 
 		User user = manager.createUser(email, password, Role.CLIENT);
+		VerificationToken token = manager.generateVerificationToken(user);
+
+		emailService.sendVerificationEmail(user.getUsername(), fullName, token.getToken());
 		
 		Client client = new Client(user, fullName);
 

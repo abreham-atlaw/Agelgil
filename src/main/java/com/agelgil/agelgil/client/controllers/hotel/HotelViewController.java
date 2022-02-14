@@ -29,7 +29,7 @@ public class HotelViewController extends ClientController{
 
 	@GetMapping("/client/hotel/view/{hotel_id}")
 	public String displayHotel(@PathVariable(name = "hotel_id") Long hotelId, ModelMap modelMap){
-		Hotel hotel = hotelRepository.findByIdAndVerified(hotelId, true);
+		Hotel hotel = hotelRepository.findByIdAndUserVerified(hotelId, true);
 		if(hotel == null)
 			throw new NotFoundException();
 		modelMap.addAttribute("hotel", hotel);

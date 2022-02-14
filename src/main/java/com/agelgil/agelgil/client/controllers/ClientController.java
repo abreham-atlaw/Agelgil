@@ -68,7 +68,7 @@ public class ClientController extends AgelgilController {
 			return null;
 		
 		return clientRepository.findByUser(
-			userRepository.findByUsername(principal.getName())
+			userRepository.findByUsernameAndVerified(principal.getName(), true)
 		);
 	}
 

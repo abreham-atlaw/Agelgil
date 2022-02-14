@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.agelgil.agelgil.client.controllers.hotel.filter.requests.FilterRequest;
-import com.agelgil.agelgil.client.controllers.hotel.filter.requests.HotelSpecifications;
 import com.agelgil.agelgil.hotel.data.models.City;
 import com.agelgil.agelgil.hotel.data.models.Hotel;
 import com.agelgil.agelgil.hotel.data.models.Service.ServiceType;
@@ -13,6 +12,7 @@ import com.agelgil.agelgil.hotel.data.repositories.CityRepository;
 import com.agelgil.agelgil.hotel.data.repositories.HotelRepository;
 import com.agelgil.agelgil.hotel.data.repositories.ServiceRepository;
 import com.agelgil.agelgil.hotel.data.repositories.ServiceTypeRepository;
+import com.agelgil.agelgil.hotel.data.specifications.HotelSpecifications;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
@@ -40,7 +40,7 @@ public class FilterRestController {
 	private Specification<Hotel> generateSpecification(FilterRequest request){
 
 		Specification<Hotel> specification = Specification
-												.where(HotelSpecifications.isVerified(true))
+												.where(HotelSpecifications.isUserVerified(true))
 												.and(request.getName() == null? null : HotelSpecifications.nameContains(request.getName()))
 												.and(request.getCity() == null? null : HotelSpecifications.cityEquals(request.getCity()))
 												.and(request.getMinStandard() == null? null : HotelSpecifications.standardGreaterThan(request.getMinStandard()))

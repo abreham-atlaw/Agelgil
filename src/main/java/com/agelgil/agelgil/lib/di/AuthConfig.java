@@ -6,6 +6,7 @@ import java.util.List;
 import com.agelgil.agelgil.lib.controllers.auth.handlers.AgelgilAuthenticationSuccessHandler;
 import com.agelgil.agelgil.lib.data.models.auth.User;
 import com.agelgil.agelgil.lib.data.repositories.auth.UserRepository;
+import com.agelgil.agelgil.lib.data.repositories.auth.VerificationTokenRepository;
 import com.agelgil.agelgil.lib.extra.auth.UserManager;
 
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -37,7 +38,7 @@ public class AuthConfig{
 			
 			@Override
 			public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-				User user = userRepository.findByUsername(username);
+				User user = userRepository.findByUsernameAndVerified(username, true);
 				if(user == null)
 					throw new UsernameNotFoundException(
 						String.format("User with username %s not found", username)
@@ -113,8 +114,8 @@ public class AuthConfig{
 	}
 	
 	@Bean
-	public UserManager userManager(UserRepository repository, PasswordEncoder encoder){
-		return new UserManager(repository, encoder);
+	public UserManager userManager(UserRepository repository, PasswordEncoder encoder, VerificationTokenRepository tokenRepository){
+		return new UserManager(repository, encoder, tokenRepository);
 	}
 
 
