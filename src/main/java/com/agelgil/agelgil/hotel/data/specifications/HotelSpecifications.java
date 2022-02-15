@@ -69,7 +69,7 @@ public final class HotelSpecifications {
 				subquery.select(subRoot);
 
 				Predicate containsServicePredicate = builder.equal(subRoot.get("hotel").get("id"), root.get("id"));
-				Predicate serviceTypePredicate = builder.equal(subRoot.get("serviceType").get("id"), 0); //TODO  REMOVE 0;
+				Predicate serviceTypePredicate = builder.equal(subRoot.get("serviceType").get("id"), 2); //TODO  REMOVE 0;
 				Predicate priceGreaterThanPredicate = builder.greaterThanOrEqualTo(subRoot.get("unitPrice"), value);
 
 				subquery.select(subRoot).where(containsServicePredicate, serviceTypePredicate, priceGreaterThanPredicate);
@@ -94,7 +94,7 @@ public final class HotelSpecifications {
 				subquery.select(subRoot);
 
 				Predicate containsServicePredicate = builder.equal(subRoot.get("hotel").get("id"), root.get("id"));
-				Predicate serviceTypePredicate = builder.equal(subRoot.get("serviceType").get("id"), 0); //TODO  REMOVE 0;
+				Predicate serviceTypePredicate = builder.equal(subRoot.get("serviceType").get("id"), 2); //TODO  REMOVE 0;
 				Predicate priceGreaterThanPredicate = builder.lessThanOrEqualTo(subRoot.get("unitPrice"), value);
 
 				subquery.select(subRoot).where(containsServicePredicate, serviceTypePredicate, priceGreaterThanPredicate);

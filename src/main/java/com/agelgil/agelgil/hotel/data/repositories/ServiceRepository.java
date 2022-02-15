@@ -14,7 +14,7 @@ public interface ServiceRepository extends CrudRepository<Service, Long>{
 
 	public List<Service> findByHotel(Hotel hotel);
 
-	@Query(value = "SELECT MIN(unit_price) as min, MAX(unit_price) as max FROM hotel_service WHERE service_type_id=0", nativeQuery = true)
+	@Query(value = "SELECT MIN(unit_price) as min, MAX(unit_price) as max FROM hotel_service WHERE service_type_id=2", nativeQuery = true)
 	public Map<String, Float> findRoomPriceRange();
 
 }
