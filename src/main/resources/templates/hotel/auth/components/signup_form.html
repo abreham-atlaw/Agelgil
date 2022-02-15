@@ -31,7 +31,7 @@
 		<label for="plusCode" class="form-label mb-1">Location</label>
 		<div class="input-group">
 			<span class="input-group-text bg-light border-right-0"><i class="fas fa-street-view text-secondary"></i></span>
-			<input type="text" class="form-control border-left-0 bg-light" placeholder="Plus Code(eg. JJXX+HR8, Seattle)" th:field="*{plusCode}" required>
+			<input type="text" class="form-control border-left-0 bg-light" placeholder="Latitude, Longitude(eg. 9.0203037,38.757814)" th:field="*{plusCode}" required>
 		</div>
 		<div th:if="${#fields.hasErrors('plusCode')}" class="text-danger" th:errors="*{plusCode}"></div>
 	</div>

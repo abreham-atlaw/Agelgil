@@ -46,7 +46,7 @@
 															<input type="hidden" th:value="${service.id}" name="service" id="service" >
 	
 															<label class="form-label font-weight-bold" for="units" th:text="${#strings.capitalize(serviceType.unit)}"></label>
-															<input type="number" name="units" id="units" value="1" class="form-control col-5" required>
+															<input type="number" name="units" id="units" value="1" min="1" class="form-control col-5" required>
 	
 															<div class="d-flex mt-4">
 																<input type="submit" value="ADD TO CART" class="btn btn-primary px-4 py-2">
