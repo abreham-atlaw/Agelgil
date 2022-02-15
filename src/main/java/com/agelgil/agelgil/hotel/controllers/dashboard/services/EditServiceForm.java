@@ -3,7 +3,6 @@ package com.agelgil.agelgil.hotel.controllers.dashboard.services;
 import com.agelgil.agelgil.hotel.data.models.Service;
 import com.agelgil.agelgil.hotel.data.models.Service.ServiceType;
 import com.agelgil.agelgil.hotel.data.repositories.ServiceRepository;
-import com.agelgil.agelgil.lib.services.FileStorageService;
 import com.agelgil.agelgil.lib.services.StorageService;
 
 import org.springframework.web.multipart.MultipartFile;

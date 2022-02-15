@@ -14,10 +14,8 @@ import com.agelgil.agelgil.hotel.data.models.Hotel;
 import com.agelgil.agelgil.hotel.data.models.Hotel.Location;
 import com.agelgil.agelgil.hotel.data.repositories.HotelRepository;
 import com.agelgil.agelgil.lib.data.models.auth.User;
-import com.agelgil.agelgil.lib.data.models.auth.VerificationToken;
 import com.agelgil.agelgil.lib.data.models.auth.User.Role;
 import com.agelgil.agelgil.lib.extra.auth.UserManager;
-import com.agelgil.agelgil.lib.services.FileStorageService;
 import com.agelgil.agelgil.lib.services.StorageService;
 
 import org.springframework.web.multipart.MultipartFile;

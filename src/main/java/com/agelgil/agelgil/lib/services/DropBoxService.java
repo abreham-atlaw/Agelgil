@@ -35,10 +35,10 @@ public class DropBoxService extends StorageService{
 			return sharedLinkMetadata.getUrl()+"&raw=1";
 		}
 		catch(IOException ex){
-			throw new StorageException();
+			throw new StorageException(ex.getMessage());
 		}
 		catch(DbxException ex){
-			throw new StorageException();
+			throw new StorageException(ex.getMessage());
 		}
 		
 	}
